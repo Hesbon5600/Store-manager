@@ -1,0 +1,132 @@
+/* * * * * * * * * *
+* ADMIN-HEADER
+* * * * * * * * * */
+
+.admin-header {
+    width: 95%;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #BFBCB3;
+}
+
+.admin-header .admin-logo {
+    width: 40%;
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0px;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 300;
+    color: #3E606F;
+}
+
+.admin-header .user-info {
+    width: 15%;
+    float: right;
+    margin-top: 4%;
+}
+
+.admin-header .logout-btn {
+    color: #FF0000;
+    text-decoration: none;
+}
+.admin-header .logout-btn:hover {
+    color: #6E0606;
+}
+.admin-header:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.content .menu {
+    width: 15%;
+    float: left;
+    margin: 0 5px;
+}
+
+/* * * * * * * * * *
+* DASHBOARD
+* * * * * * * * * */
+
+.dashboard {
+    width: 95%;
+    margin: 5px auto 50px;
+    border: 1px solid #BFBCB3;
+    padding: 10px 0px 50px;
+
+}
+
+.dashboard:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.dashboard h1 {
+    text-align: center;
+    margin: 25px;
+    font-size: 40px;
+    font-weight: 600;
+}
+.dashboard .stats{
+    margin-top: 0;
+    width: 100%;
+}
+.dashboard .stats a {
+    display: inline-block;
+    padding: 2%;
+    margin:auto 1.7%;
+    width: 25%;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #8f877a;
+    color: #E1E1E1;
+    background-color: #3E606F;
+
+}
+
+
+.dashboard .stats a:hover {
+    cursor: pointer;
+    background-color:#E1E1E1;
+    color:  #3E606F;
+}
+
+.dashboard .buttons {
+    margin-left: 15px;
+    width: 50%;
+}
+
+.dashboard .buttons button {
+    display: inline-block;
+}
+
+
+
+
+
+@media only screen and (max-width: 772px) {
+    
+    .admin-header .admin-logo,
+    .admin-header .user-info {
+        margin-top: 5%;
+        margin-top: 10%;
+    }
+    .dashboard h1{
+        font-size: 30px
+    }
+    .dashboard .stats a{
+        width: 40%;
+        height: 100%;
+    }
+    .dashboard .buttons{
+        width: 100%;
+    }
+    .content .menu, .content .action , .action .form div, .content .table-div, .content .create-product-div{
+        width: 95%;
+        margin-left: 1%
+    }
+    
+
+}
