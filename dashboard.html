@@ -14,18 +14,19 @@
     <!--======================header============================ -->
     <header class="header">
         <div class="logo">
-            <a href="index.html">My Store</a>
+            <a href="dashboard.html">My Store</a>
         </div>
         <nav class="nav-wrapper">
             <ul class="main-nav">
-                <li><a href="index.html" title="home">Home</a></li>
-                <li><a href="admin_records.html" title="Report">Report</a></li>
-                <li class="current"><a href="dashboard.html" title="dashboard">Dashboard</a></li>
+                <li><a class="smoothscroll"  href="index.html" title="home">Home</a></li>
+                <li><a href="#products" title="products">Products</a></li>
+                <li><a href="manageproduct.html" title="products">Manage</a></li>
+                <li class="current"><a href="#dashboard" title="dashboard">Dashboard</a></li>
                 <li><a href="#" title=""><i class="fa fa-shopping-cart"> Cart</i></a></li>
             </ul>
         </nav>
     </header> <!-- /header -->
-    <div class="content">
+    <div class="content dashboard-content">
         <div class="admin-header">
             <div class="admin-logo">
                 <a href="#">
@@ -42,7 +43,7 @@
             <div class="stats">
                 <a href="admin_users.html">
               <span>43</span> <br>
-              <span>Store Attendants</span>
+              <span>Attendants</span>
             </a>
                 <a href="admin_records.html">
               <span>250</span> <br>
@@ -54,6 +55,7 @@
               <span>Products</span>
             </a>
             </div>
+
             <div class="buttons">
                 <a class="button button-secondary" href="admin_users.html">Add Users</a>
                 <a class="button button-secondary" href="admin_products.html">Add Product</a>
