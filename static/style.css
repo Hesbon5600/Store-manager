@@ -429,17 +429,26 @@ input[type="button"].button-primary:focus {
     color: #292621;
     font-size: 18px;
 }
-.sidebar .signup-login form div{
+.sidebar.signup-login form{
+  width: 70%;
+  margin: 2% 15%;
+}
+.sidebar.signup-login form div, .create-product-div form div{
     display:block;
     margin:25% 0;
     overflow: hidden;
     
 }
-.sidebar .signup-login{
-  width: 60%;
-  margin: 0;
-  overflow: hidden;
 
+
+.sidebar.categories .search input, .sidebar.signup-login form div input{
+  margin: 0;
+    width:100%;
+    float: left;
+    border:  none;
+    border-bottom:  1px solid #afadad;
+    height: 1%;
+    background-color: inherit;
 }
 
 .sidebar .signup-login form div input:focus{
@@ -479,6 +488,7 @@ input[type="button"].button-primary:focus {
     width: 85%;
     margin: 10px 10px;
   }
+  
   .footer{
     height: 50px;
   }
