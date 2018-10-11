@@ -462,8 +462,8 @@ input[type="button"].button-primary:focus {
  * Modal Styles
  *===========================================*/
 
- #product-modal{
-  display: none;
+ #product-modal, #cart-modal.cart{
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -474,7 +474,8 @@ input[type="button"].button-primary:focus {
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
 }
-.single-product#modal-product{
+
+.single-product#modal-product, .cart-product#cart-products{
   background-color: #3E606F;
     margin: 15% auto; 
     padding: 0 1% 2% 1%;
@@ -485,6 +486,7 @@ input[type="button"].button-primary:focus {
     left: 34%;
     border-radius: 5px;
   }
+
   .single-product#modal-product #M-top{
     height:15%;
     width: 99%;
@@ -530,6 +532,61 @@ input[type="button"].button-primary:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+.cart-product#cart-products{
+  top: 0;
+}
+.cart-product#cart-products div{
+  width: 95%;
+  height: 90%;
+  margin: 8% 0;
+}
+.cart-product#cart-products #M-top{
+  height: 20%;
+  margin: 1% 1%;
+}
+.cart-product#cart-products #M-top h6{
+  margin: 0;
+  color: #ffff;
+  text-align: right;
+}
+.cart-product#cart-products #M-top h6 i{
+  float: right;
+  margin-right:1%;
+  width: 10%;
+  padding-left: 30%;
+}
+
+.cart-product#cart-products .cart-content{
+  height: 80%;
+  border-radius: 5%;
+  margin-top: 0;
+}
+.cart-product#cart-products table{
+  width: 95%;
+  border-radius: 2%;
+  margin-left: 2.5%;
+  height: 95%;
+  color: #F9F9F9;
+  text-align: center;
+}
+.cart-product#cart-products table thead tr th{
+  background-color: #F9F9F9;
+  color: #3E606F;
+}
+.cart-product#cart-products table tbody tr td{
+  border-bottom: 1px solid rgb(255, 255, 255);
+
+}
+.cart-product#cart-products table tbody tr td:first-child{
+  border-left: none;
+}
+.cart-product#cart-products table tbody tr td a{
+  color: red;
+  padding-left: 40%;
+}
+.cart-product#cart-products table tbody tr td a:hover{
+  color: #1a1811;
 }
 /*=========================================== 
  * Sidebar Styles
