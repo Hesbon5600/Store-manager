@@ -1,14 +1,14 @@
 // Get the modal
-var modal = document.getElementById('product-modal');
+let modal = document.getElementById('product-modal');
 
 // Get the button that opens the modal
-var btn = document.getElementById("buy");
+let btn = document.getElementById("buy");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+let span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
+// When the user clicks the product, open the modal 
+function displayModal() {
     modal.style.display = "block";
 }
 
