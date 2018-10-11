@@ -326,7 +326,7 @@ input[type="button"].button-primary:focus {
 .nav-wrapper .main-nav li {
   display: inline-block;
   padding-left: 0;
-  margin-right: 15%;
+  margin-right: 10%;
 
 }
 .nav-wrapper .main-nav li a {
@@ -344,6 +344,9 @@ input[type="button"].button-primary:focus {
 }
 
 @media only screen and (max-width: 900px) {
+  .header{
+    height: 140px;
+  }
   .nav-wrapper {
     right: 1%;
     width: 80%;
@@ -354,7 +357,7 @@ input[type="button"].button-primary:focus {
     width:80%;
   }
   .nav-wrapper .main-nav li{
-    margin-right: 5%; 
+    margin-right: 8%; 
   }
 }
 
@@ -362,37 +365,33 @@ input[type="button"].button-primary:focus {
  * Main Content Styles
  *===========================================*/
 .content{
-    padding: 3% 4%;
+    padding: 3%;
     width: 95%;
-    margin: 1% 4%;
+    height: 500px;
+    margin: .5%;
     border: 1px solid #BFBCB3;
-    padding: 10px 0px 25px 25px;
-    min-height:500px;
-    background:linear-gradient(to right, rgba(82, 113, 126, .3), #e5e9eb);
+    padding: 10px;
+    background:linear-gradient(to bottom, rgba(82, 113, 126, .3), #e5e9eb);
     
     
 }
+
 .content div{
     display:inline-block;
     overflow: hidden;
     
 }
 .content .main-content{
-    width: 60%;
+    width: 80%;
     min-height: 300px;
     margin-bottom: 20px;
     padding: 1%;
     border-right: 1px solid #afadad;
     overflow: hidden;
 }
-
-
-.content .main-content .section-title {
-    font-size: 24px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    overflow: hidden;
+.main-content.welcome{
+  width: 60%;
+  margin-right: 0;
 }
 
 /*=========================================== 
@@ -424,8 +423,12 @@ input[type="button"].button-primary:focus {
 .sidebar .widget a:hover{
     color: #AB8E40;
 }
+.sidebar.signup-login{
+  margin: 0;
+  overflow: hidden;
+}
 
-.sidebar .signup-login h3{
+.sidebar.signup-login h3{
     color: #292621;
     font-size: 18px;
 }
@@ -450,26 +453,101 @@ input[type="button"].button-primary:focus {
     height: 1%;
     background-color: inherit;
 }
-
-.sidebar .signup-login form div input:focus{
+.sidebar.signup-login form div input:focus{
   outline:none;
 }
-.sidebar .signup-login form div button{
+.sidebar.signup-login form div button{
     text-transform: none;
     width: 35%;
 }
+.sidebar.categories{
+    float:  left;
+    margin:0;
+    padding:0;
+    width: 20%;
+}
+.sidebar.categories.top{
+  width: 90%;
+  margin: .5% 1.5%;
+  position: relative;
+  display: none;
+}
+.sidebar.categories div{
+  display:  block;
+}
+.sidebar.categories .search{
+  border-radius: 5px; 
+  border: 1px solid #afadad;
+}
+.sidebar.categories h3{
+  border-bottom: 1px solid #afadad;
+  width: 80%;
+  margin: 4% 8%
+}
+.sidebar.categories .search form{
+  width: 80%;
+  margin: 4% 7%;
+}
+.sidebar.categories .search input{
+    width: 65%;
+    float: left;
+    padding: 1.9% 1.6% 1.9% 1.5%;
+    background-color: #f3f0f0;
+    margin: 0;
+    border:  1px solid #afadad;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    
+}
+.sidebar.categories .search button{
+  width: 35%;
+  margin: 0;
+  border: none;
+}
+.sidebar.categories .product-categories{
+    border:  1px solid #afadad;
+    border-radius: 5px;
+    margin: 6% 0;
+    padding:.5% 0;
+  
+}
+.sidebar.categories .product-categories ul{
+  margin-left: 0;
+  width: 70%;
+}
+.sidebar.categories .product-categories ul li{
+  list-style: none;
+  text-align: left;
+  margin: 7% 0;
+  border-bottom: 1px solid #afadad;
+}
+.sidebar.categories .product-categories ul li:hover{
+    padding-left: 7%;
+    background: #F9F9F9;
+    transition: 0.1s;
+    color:#AB8E40;
+    cursor: pointer;
+}
+
 /* Footer */
 .footer{
-  height: 100px;
+  height: 50px;
   width: 95%;
   margin: 0% 4%;
 }
 .footer p{
   margin: 0 33%;
 }
-@media only screen and (max-width: 576px) {
+
+
+@media only screen and (max-width: 572px) {
+  
   .content{
+    width: 90%;
     border: none;
+    min-height: 600px;  
   }
   .content div{
     display:block;
@@ -483,38 +561,78 @@ input[type="button"].button-primary:focus {
   .content .main-content .section-title{
     text-align: left;
   }
-
-  .sidebar{
-    width: 85%;
-    margin: 10px 10px;
+  .main-content.products{
+    width: 95%;
   }
-  
+  .main-content.products .single-product{
+    width: 30%;
+    height: 20%;
+  }
+  .main-content.products .single-product div img{
+    height:35%;
+  }
+  .main-content.products .single-product .product-footer span{
+    margin: 3% 1% .5% 1%;
+  }
+  .sidebar{
+    width: 95%;
+  }
+  .sidebar.categories{
+    width: 30%;
+
+  }
+  .sidebar.categories.side{
+    display: none;
+  }
+  .sidebar.categories.top{
+    display: block;
+    width: 93%;
+  }
+  .sidebar.categories.top div{
+    margin: 0;
+  }
+  .sidebar.categories.top div h3{
+    display: none;
+  }
+  .sidebar.categories.top div ul{
+    padding: 0;
+    width: 95%;
+  }
+  .sidebar.categories.top div ul li{
+    display: inline-block;
+    margin: 0% 3%;
+    margin: 0;
+    padding-right: 3px;
+    border-right: 1px solid #afadad;
+  }
+  .sidebar.categories.top div ul li:hover{
+    padding:0 1%;
+    border-radius: 2px;
+  }
+  .sidebar.categories.top .search form  input{
+    height: 5%;
+  }
   .footer{
     height: 50px;
   }
   .footer p{
-    font-size: 14px;
-  }
-}@media (min-width: 576px) {
-  .content {
-    max-width: 540px;
+    font-size: 11px;
   }
 }
 
-@media (min-width: 768px) {
-  .content {
-    max-width: 720px;
+@media only screen and (max-width: 768px) {
+
+  .content.max{
+    height: 1325px;
+  }
+  .content.home{
+    height: 650px;
+    margin-bottom: 2%;
   }
 }
 
-@media (min-width: 992px) {
-  .content {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .content {
-    max-width: 1140px;
+@media only screen and (max-width: 931px) {
+  .content.home{
+    margin-bottom: 2%;
   }
 }
