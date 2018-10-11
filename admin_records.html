@@ -14,13 +14,13 @@
     <!--======================header============================ -->
     <header class="header">
         <div class="logo">
-            <a href="dashboard.html">My Store</a>
+            <a href="index.html">My Store</a>
         </div>
         <nav class="nav-wrapper">
             <ul class="main-nav">
-                <li><a href="dashboard.html" title="home">Home</a></li>
-                <li><a href="products.html" title="products">Products</a></li>
-                <li class="current"><a href="dashboard.html" title="dashboard">Dashboard</a></li>
+                <li><a class="smoothscroll"  href="index.html" title="home">Home</a></li>
+                <li><a href="#products" title="products">Products</a></li>
+                <li class="current"><a href="#dashboard" title="dashboard">Dashboard</a></li>
                 <li><a href="#" title=""><i class="fa fa-shopping-cart"> Cart</i></a></li>
             </ul>
         </nav>
@@ -28,7 +28,7 @@
     <div class="content">
         <div class="admin-header">
             <div class="admin-logo">
-                <a href="dashboard.html">
+                <a href="index.html">
                   <h1>My Store - Admin</h1>
               </a>
             </div>
@@ -37,49 +37,43 @@
                 <a href="index.html" class="logout-btn">logout</a>
             </div>
         </div>
-        <!-- Left menu -->
-        <div class="menu">
-            <div class="card">
-                <div class="card-header">
-                    <h2>Actions</h2>
-                </div>
-                <div class="card-content">
-                    <a href="admin_products.html">Manage Products</a>
-                    <a href="admin_users.html">Manage Users</a>
-                </div>
+        <div class="action sort">
+            <div class="title">
+                <h6>Sort by:</h6>
+            </div>
+            <div>  
+        	<form action="#" method="POST" accept-charset="utf-8">
+        		<div>
+        			<select name="topic_id">
+                        <option value="" selected disabled>...criteria...</option>
+                        <option value="">
+                            Store Attendant
+                        </option>
+                        <option value="">
+                            Product
+                        </option>
+                        <option value="">
+                            Price
+                        </option>
+                        <option value="">
+                            Quantity remaining
+                        </option>
+                    </select>	
+        		</div>	
+        	</form>
             </div>
         </div>
-        <!-- /Left menu -->
-        <!-- Middle form to create and edit users -->
-        <div class="action">
-            <p>Create/Edit Users</p>
-            <form method="post" action="#">
-                <div>
-                    <input type="text" name="username" value="" placeholder="Username" >
-                </div>
-                <div>
-                    <input type="email" name="email" value="" placeholder="Email" >
-                </div>
-                <div>
-                    <input type="password" name="password" placeholder="Password" >
-                </div>
-                <div>
-                    <input type="password" name="passwordConfirmation" placeholder="Password confirmation" >
-                </div>
-                <div>
-                    <button type="submit" class="button button-primary" name="update_admin">Update</button>
-                    <button type="submit" class="button button-primary" name="create_admin">Save User</button>
-                </div>
-            </form>
-        </div>
-        <!-- /Middle form to create and edit users -->
         <!--display records from DB -->
-        <div class="table-div">
+        <div class="table-div admin">
             <table class="table">
                 <thead>
                     <th>N</th>
-                    <th>Name</th>
-                    <th>Role</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price (Ksh)</th>
+                    <th>Quantity sold</th>
+                    <th>Quantity remaining</th>
+                    <th>Total (Ksh)</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </thead>
@@ -87,9 +81,13 @@
                     <tr>
                         <td>1</td>
                         <td>
-                            Kiptoo
+                            Sugar
                         </td>
-                        <td>S-Attendant</td>
+                        <td>Mumias Sugar</td>
+                        <td>140</td>
+                        <td>2</td>
+                        <td>120</td>
+                        <td>280</td>
                         <td class="btn">
                             <a class="fa fa-pencil edit"
                         href="#">
@@ -104,9 +102,13 @@
                     <tr>
                         <td>2</td>
                         <td>
-                            Maiyo
+                            Rice
                         </td>
-                        <td>S-Attendant</td>
+                        <td>Pishori</td>
+                        <td>200</td>
+                        <td>4</td>
+                        <td>58</td>
+                        <td>800</td>
                         <td class="btn">
                             <a class="fa fa-pencil edit"
                         href="#">
@@ -121,9 +123,13 @@
                     <tr>
                         <td>3</td>
                         <td>
-                            James
+                            Soap
                         </td>
-                        <td>S-Attendant</td>
+                        <td>Ushindi bar soap</td>
+                        <td>80</td>
+                        <td>10</td>
+                        <td>420</td>
+                        <td>800</td>
                         <td class="btn">
                             <a class="fa fa-pencil edit"
                         href="#">
@@ -138,9 +144,13 @@
                     <tr>
                         <td>4</td>
                         <td>
-                            Mugaza
+                            Coffee
                         </td>
-                        <td>S-Attendant</td>
+                        <td>Maccoffe</td>
+                        <td>5</td>
+                        <td>200</td>
+                        <td>500</td>
+                        <td>1,000</td>
                         <td class="btn">
                             <a class="fa fa-pencil edit"
                         href="#">
@@ -155,9 +165,13 @@
                     <tr>
                         <td>5</td>
                         <td>
-                            Kevo
+                            Salt
                         </td>
-                        <td>S-Attendant</td>
+                        <td>Kensalt</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>50</td>
+                        <td>50</td>
                         <td class="btn">
                             <a class="fa fa-pencil edit"
                         href="#">
@@ -172,9 +186,13 @@
                     <tr>
                         <td>6</td>
                         <td>
-                            John
+                            Ketchup
                         </td>
-                        <td>S-Attendant</td>
+                        <td>Ken Source</td>
+                        <td>140</td>
+                        <td>2</td>
+                        <td>120</td>
+                        <td>280</td>
                         <td class="btn">
                             <a class="fa fa-pencil edit"
                         href="#">
@@ -189,60 +207,13 @@
                     <tr>
                         <td>7</td>
                         <td>
-                            Winnie
+                            Baking soda
                         </td>
-                        <td>S-Attendant</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>
-                            Eunice
-                        </td>
-                        <td>S-Attendant</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>
-                            Tess
-                        </td>
-                        <td>S-Attendant</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>
-                            Maria
-                        </td>
-                        <td>S-Attendant</td>
+                        <td>Mumias Baking soda</td>
+                        <td>50</td>
+                        <td>10</td>
+                        <td>1100</td>
+                        <td>500</td>
                         <td class="btn">
                             <a class="fa fa-pencil edit"
                         href="#">
@@ -255,14 +226,23 @@
                         </td>
                     </tr>
                 </tbody>
+                <thead>  
+                	<th colspan="6"></th>
+                    <th colspan="3">Total Income (Ksh)</th>
+                 </thead>
+                <tbody class="total">
+                <tr>
+                	<td colspan="6"></td>
+                    <td colspan="3">2,710</td>
+                </tr>
+            </tbody>
             </table>
-        </div>
+        </div>        
     </div>
-        <!-- Footer -->
+		<!-- Footer -->
 	<div class="footer">
 		<p>&copy; Copyright 2018 Hesbon</p>
 	</div>
-	<!-- /Footer -->
+	<!-- /Footer -->  
 </body>
-
 </html>
