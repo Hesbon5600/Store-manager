@@ -20,7 +20,7 @@
                 <li><a href="dashboard.html" title="home">Home <i class="fa fa-home"></i></a></li>
                 <li class="current"><a href="products.html" title="products">Products <i class="fa fa-clipboard"></i></a></li>
                 <li><a href="dashboard.html" title="dashboard">Dashboard <i class="fa fa-dashboard"></i></a></li>
-                <li><a href="#" title="">Cart <i class="fa fa-shopping-cart"></i></a></li>
+                <li onclick="displayCart()"><a href="#" title="">Cart <i class="fa fa-shopping-cart"></i></a></li>
             </ul>
             </nav>
         </header> <!-- /header -->
@@ -58,9 +58,9 @@
                 </div>
             </div>
             <!-- Main Content for the products
-            <button id="buy" type="submit">Modal</button> -->
+            <button  type="submit">Modal</button> -->
         `   <div class="main-content products">
-            <!-- Modal -->
+            <!-- Add to cart Modal -->
                 <div  id="product-modal" >
                     <div class="single-product" id="modal-product">
                         <div id="M-top">
@@ -83,7 +83,76 @@
                         </div>
                     </div>
                 </div>
-            <!-- /Modal -->
+            <!-- /Add to cart Modal -->
+            
+            <!-- Cart Modal -->
+                <div  id="cart-modal" class="cart" >
+                    <div class="cart-product" id="cart-products">
+                        <div id="M-top">
+                         <h6>Cart   <i class="close close-cart fa fa-times"></i></h6>
+                        
+                        </div>
+                        <div class="cart-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        
+                                        <td>Omo</td>
+                                        <td>120</td>
+                                        <td>2</td>
+                                        <td><a href="" title=""><i class="fa fa-times"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Omo</td>
+                                        <td>120</td>
+                                        <td>2</td>
+                                        <td><a href="" title=""><i class="fa fa-times"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Omo</td>
+                                        <td>120</td>
+                                        <td>2</td>
+                                        <td><a href="" title=""><i class="fa fa-times"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Omo</td>
+                                        <td>120</td>
+                                        <td>2</td>
+                                        <td><a href="" title=""><i class="fa fa-times"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Omo</td>
+                                        <td>120</td>
+                                        <td>2</td>
+                                        <td><a href="" title=""><i class="fa fa-times"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Omo</td>
+                                        <td>120</td>
+                                        <td>2</td>
+                                        <td><a href="" title=""><i class="fa fa-times"></i></a></td>
+                                    </tr>
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">Total</th>
+                                        <th>480</th>
+                                    </tr>
+                                    
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            <!-- /Cart Modal -->
                 <div onclick="displayModal()" class="single-product" >
                     <div>
                         <a  href="#" title=""><img  src="images/img_8.jpg" alt="Product1"></a>
@@ -105,7 +174,7 @@
                     </div>
                     <div class="product-footer">
                         <a href="" title=""><span class="first">Ksh 2,500</span></a>
-                        <span id="buy"  class="last"><a  href="#" title="">Buy <i class="fa fa-plus"></i></a></span>
+                        <span   class="last"><a  href="#" title="">Buy <i class="fa fa-plus"></i></a></span>
                     </div>
                 </div>
                 <div onclick="displayModal()" class="single-product">
