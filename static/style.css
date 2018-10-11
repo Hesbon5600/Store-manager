@@ -683,10 +683,19 @@ input[type="button"].button-primary:focus {
   .content.max{
     height: 1325px;
   }
-  .content.home{
-    height: 650px;
-    margin-bottom: 2%;
+  .content.users{
+    height: 1100px;
   }
+  .content.home{
+    height: 720px;
+    margin-left: 5%;
+    overflow: hidden;
+    padding: 0 0 0 1%;
+    width: 85%;
+  }
+  /* .content.home .main-content.welcome{
+    display: none
+  } */
 }
 
 @media only screen and (max-width: 931px) {
@@ -697,8 +706,9 @@ input[type="button"].button-primary:focus {
 
 @media only screen and (max-width: 572px) {
   .content{
-    width: 100%;
+    width: 98%;
     border: none;
+    margin: 0;
     min-height: 600px;  
   }
   .content div{
