@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Store | Manage Users</title>
+    <link rel="stylesheet" type="text/css" href="static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="stylesheet" type="text/css" href="static/admin-style.css">
+</head>
+
+<body>
+    <!--======================header============================ -->
+    <header class="header">
+        <div class="logo">
+            <a href="dashboard.html">My Store <i class="fa fa-stack-overflow"></i></a>
+        </div>
+        <nav class="nav-wrapper">
+            <ul class="main-nav">
+                <li><a href="dashboard.html" title="home">Home <i class="fa fa-home"></i></a></li>
+                <li><a href="products.html" title="products">Products <i class="fa fa-clipboard"></i></a></li>
+                <li class="current"><a href="dashboard.html" title="dashboard">Dashboard <i class="fa fa-dashboard"></i></a></li>
+                <li><a href="#" title="">Cart <i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header> <!-- /header -->
+    <div class="content users">
+        <div class="admin-header">
+            <div class="admin-logo">
+                <a href="dashboard.html">
+                  <h1>My Store - Admin</h1>
+              </a>
+            </div>
+            <div class="user-info">
+                Hesbon |
+                <a href="index.html" class="logout-btn">logout</a>
+            </div>
+        </div>
+        <!-- Left menu -->
+        <div class="menu">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Actions</h2>
+                </div>
+                <div class="card-content">
+                    <a href="admin_products.html">Manage Products</a>
+                    <a href="admin_users.html">Manage Users</a>
+                </div>
+            </div>
+        </div>
+        <!-- /Left menu -->
+        <!-- Middle form to create and edit users -->
+        <div class="action">
+            <p>Create/Edit Users</p>
+            <form>
+                <div>
+                    <input type="text" name="username" value="" placeholder="Username" >
+                </div>
+                <div>
+                    <input type="email" name="email" value="" placeholder="Email" >
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="Password" >
+                </div>
+                <div>
+                    <input type="password" name="passwordConfirmation" placeholder="Password confirmation" >
+                </div>
+                <div>
+                    <button type="submit" class="button button-primary" name="update_admin">Update</button>
+                    <button type="submit" class="button button-primary" name="create_admin">Save User</button>
+                </div>
+            </form>
+        </div>
+        <!-- /Middle form to create and edit users -->
+        <!--display records from DB -->
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <th>N</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            Kiptoo
+                        </td>
+                        <td>S-Attendant</td>
+                        <td class="btn">
+                            <a class="fa fa-pencil edit"
+                        href="#">
+                      </a>
+                        </td>
+                        <td class="btn">
+                            <a class="fa fa-trash-o delete"
+                          href="#">
+                      </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            Maiyo
+                        </td>
+                        <td>S-Attendant</td>
+                        <td class="btn">
+                            <a class="fa fa-pencil edit"
+                        href="#">
+                      </a>
+                        </td>
+                        <td class="btn">
+                            <a class="fa fa-trash-o delete"
+                          href="#">
+                      </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            James
+                        </td>
+                        <td>S-Attendant</td>
+                        <td class="btn">
+                            <a class="fa fa-pencil edit"
+                        href="#">
+                      </a>
+                        </td>
+                        <td class="btn">
+                            <a class="fa fa-trash-o delete"
+                          href="#">
+                      </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            Mugaza
+                        </td>
+                        <td>S-Attendant</td>
+                        <td class="btn">
+                            <a class="fa fa-pencil edit"
+                        href="#">
+                      </a>
+                        </td>
+                        <td class="btn">
+                            <a class="fa fa-trash-o delete"
+                          href="#">
+                      </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            Kevo
+                        </td>
+                        <td>S-Attendant</td>
+                        <td class="btn">
+                            <a class="fa fa-pencil edit"
+                        href="#">
+                      </a>
+                        </td>
+                        <td class="btn">
+                            <a class="fa fa-trash-o delete"
+                          href="#">
+                      </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>
+                            John
+                        </td>
+                        <td>S-Attendant</td>
+                        <td class="btn">
+                            <a class="fa fa-pencil edit"
+                        href="#">
+                      </a>
+                        </td>
+                        <td class="btn">
+                            <a class="fa fa-trash-o delete"
+                          href="#">
+                      </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>
+                            Winnie
+                        </td>
+                        <td>S-Attendant</td>
+                        <td class="btn">
+                            <a class="fa fa-pencil edit"
+                        href="#">
+                      </a>
+                        </td>
+                        <td class="btn">
+                            <a class="fa fa-trash-o delete"
+                          href="#">
+                      </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>
+                            Eunice
+                        </td>
+                        <td>S-Attendant</td>
+                        <td class="btn">
+                            <a class="fa fa-pencil edit"
+                        href="#">
+                      </a>
+                        </td>
+                        <td class="btn">
+                            <a class="fa fa-trash-o delete"
+                          href="#">
+                      </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>
+                            Tess
+                        </td>
+                        <td>S-Attendant</td>
+                        <td class="btn">
+                            <a class="fa fa-pencil edit"
+                        href="#">
+                      </a>
+                        </td>
+                        <td class="btn">
+                            <a class="fa fa-trash-o delete"
+                          href="#">
+                      </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>
+                            Maria
+                        </td>
+                        <td>S-Attendant</td>
+                        <td class="btn">
+                            <a class="fa fa-pencil edit"
+                        href="#">
+                      </a>
+                        </td>
+                        <td class="btn">
+                            <a class="fa fa-trash-o delete"
+                          href="#">
+                      </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+        <!-- Footer -->
+	<div class="footer">
+		<p>&copy; Copyright 2018 Hesbon</p>
+	</div>
+	<!-- /Footer -->
+</body>
+
+</html>
