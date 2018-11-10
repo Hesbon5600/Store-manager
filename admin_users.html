@@ -29,8 +29,8 @@
         <div class="admin-header">
             <div class="admin-logo">
                 <a href="dashboard.html">
-                  <h1>My Store - Admin</h1>
-              </a>
+                    <h1>My Store - Admin</h1>
+                </a>
             </div>
             <div class="user-info">
                 Hesbon |
@@ -52,23 +52,35 @@
         <!-- /Left menu -->
         <!-- Middle form to create and edit users -->
         <div class="action">
-            <p>Create/Edit Users</p>
-            <form>
+            <p>Create</p>
+				<div id="Message" style="color: red"></div>
+            <form id='signup'>
                 <div>
-                    <input type="text" name="username" value="" placeholder="Username" >
+                    <input type="text" id="username" value="" placeholder="Username" required>
                 </div>
                 <div>
-                    <input type="email" name="email" value="" placeholder="Email" >
+                    <input type="email" id="email" value="" placeholder="Email" required>
                 </div>
                 <div>
-                    <input type="password" name="password" placeholder="Password" >
+                    <input type="password" id="password" placeholder="Password" required>
                 </div>
                 <div>
-                    <input type="password" name="passwordConfirmation" placeholder="Password confirmation" >
+                    <input type="password" id="password2" placeholder="Renter Password" required>
                 </div>
                 <div>
+                    <select id="role" required>
+                        <option value="" selected disabled>Select Role...</option>
+                        <option>
+                            attendant
+                        </option>
+                        <option>
+                            admin
+                        </option>
+                    </select>
+                </div>
+                <div class="create-update-button">
                     <button type="submit" class="button button-primary" name="update_admin">Update</button>
-                    <button type="submit" class="button button-primary" name="create_admin">Save User</button>
+                    <button onclick="signup()" type="submit" class="button button-primary" name="create_admin">Save User</button>
                 </div>
             </form>
         </div>
@@ -79,190 +91,23 @@
                 <thead>
                     <th>N</th>
                     <th>Name</th>
+                    <th>Email</th>
                     <th>Role</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Promote</th>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>
-                            Kiptoo
-                        </td>
-                        <td>S-Attendant</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>
-                            Maiyo
-                        </td>
-                        <td>S-Attendant</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>
-                            James
-                        </td>
-                        <td>S-Attendant</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>
-                            Mugaza
-                        </td>
-                        <td>S-Attendant</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>
-                            Kevo
-                        </td>
-                        <td>S-Attendant</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>
-                            John
-                        </td>
-                        <td>S-Attendant</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>
-                            Winnie
-                        </td>
-                        <td>S-Attendant</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>
-                            Eunice
-                        </td>
-                        <td>S-Attendant</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>
-                            Tess
-                        </td>
-                        <td>S-Attendant</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>
-                            Maria
-                        </td>
-                        <td>S-Attendant</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
+                <tbody id=users>
+                    
                 </tbody>
             </table>
         </div>
     </div>
-        <!-- Footer -->
-	<div class="footer">
-		<p>&copy; Copyright 2018 Hesbon</p>
-	</div>
-	<!-- /Footer -->
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; Copyright 2018 Hesbon</p>
+    </div>
+    <!-- /Footer -->
+    <script src="static/js/signup.js"></script>
+    <script src="static/js/users.js"></script>
 </body>
 
 </html>

@@ -41,16 +41,16 @@
             <h1>Welcome</h1>
             <div class="stats">
                 <a href="admin_users.html">
-              <span>43</span> <br>
+              <span id="attSummary"></span> <br>
               <span>Attendants</span>
             </a>
                 <a href="admin_records.html">
-              <span>250</span> <br>
+              <span id="salesSummary">250</span> <br>
               <span>Records</span>
             </a>
             
             <a href="admin_products.html">
-              <span>2904</span> <br>
+              <span id="prodSummary">2904</span> <br>
               <span>Products</span>
             </a>
             </div>
@@ -64,7 +64,11 @@
 	<div class="footer">
 		<p>&copy; Copyright 2018 Hesbon</p>
 	</div>
-	<!-- /Footer --> 
+    <!-- /Footer --> 
+    <script src="static/js/getProducts.js"></script>
+    <script src="static/js/sales.js"></script>
+    <script src="static/js/users.js"></script>
+    
 </body>
 
 </html>

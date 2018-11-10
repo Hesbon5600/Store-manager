@@ -366,7 +366,7 @@ input[type="button"].button-primary:focus {
 .content{
     padding: 3% 4%;
     width: 95%;
-    height: 500px;
+    min-height: 500px;
     margin: 1% 4%;
     border: 1px solid #BFBCB3;
     padding: 10px 0px 25px 25px;
@@ -436,10 +436,15 @@ input[type="button"].button-primary:focus {
   font-size: 12px;
   margin: 3% 4% 0 4px;
 }
+.main-content.products .single-product .product-footer a{
+  color: #F9F9F9;
+  padding-left: 6%;
+  margin-right: 0; 
+}
 .main-content.products .single-product .product-footer span{
   color: #FFFFFF;
   margin: 2%;
-  padding: 6% 6%;
+  padding: 6% 1%;
   text-decoration: none;
   width: 100%;
   border: none;
@@ -492,18 +497,19 @@ input[type="button"].button-primary:focus {
     padding: 1%;
     margin: 0 0 2%;
   }
-  .single-product#modal-product #M-top h6{
+  #modal-product #M-top h6{
     color: white;
     padding: 0;
     margin: 0;
   }
-  .single-product#modal-product img{
+  #modal-product img{
     width : 95%;
     margin:0;
     border-radius: 5px;
-    height: 40%;
+    height: 10%;
+    display: none;
   }
-  .single-product#modal-product  p{
+  #modal-product  p ul li{
     background-color: #5d92a8;
     border-radius: 2px;
     width: 93%;
@@ -511,19 +517,41 @@ input[type="button"].button-primary:focus {
     padding-left: 3%;
 
   }
-  .single-product#modal-product #footer{
-    width: 95%;
-    margin: 0;
-    
+  #modal-product  .prod:hover{
+    cursor: default;
   }
+ #modal-product #footer{
+   width: 100%;
+   margin: 0 2%;
+   text-align: center;
+   color: #d0d7db;
+   
+  }
+  #modal-product #footer a{
+    padding: 2%;
+    color: #ffffff;
+
+  }
+  #modal-product #footer a:first-child{
+    border-right: 1px solid rgb(219, 215, 204);
+    cursor: default;
+  }
+  #modal-product #footer a:last-child{
+  border-radius: 3px;
+  background-color: cadetblue;
+  }
+  #modal-product #footer a:last-child:hover{
+    color: aquamarine;
+    }
 /* The Close Button */
 .close {
     color: red;
+    float: right;
     font-size: 28px;
     font-weight: bold;
     width: 2%;
     padding: 0 0 0 15%;
-    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .close:hover,

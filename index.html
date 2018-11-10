@@ -34,18 +34,19 @@
 		<!-- Side bar -->
 	    <div class="sidebar signup-login">
 	        
-	            <h3>Login</h3>
-	            <form action="dashboard.html">
+				<h3>Login</h3>
+				<div id="Message" style="color: red"></div>
+	            <form action="" id="login">
 	                <div>
 	                    
-	                    <input type="text" name="username" placeholder="Username / Email">
+	                    <input id="username" type="text" name="username" placeholder="Username / Email">
 	                </div>
 	                <div>
 	                
-	                    <input type="password" name="password" placeholder="Password">
+	                    <input id="password" type="password" name="password" placeholder="Password">
 	                </div>
 	                <div>
-	                    <a href="dashboard.html" title=""><button class="button button-primary" type="submit" name="login">Login</button></a>
+	                    <button class="button button-primary" type="submit" name="login">Login</button>
 	                </div>
 	            </form>
 	
@@ -55,6 +56,7 @@
 	<div class="footer">
 		<p>&copy; Copyright 2018 Hesbon</p>
 	</div>
+	<script src="static/js/login.js"></script>
 </body>
 
 </html>
