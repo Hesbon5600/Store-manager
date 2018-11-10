@@ -28,8 +28,8 @@
         <div class="admin-header">
             <div class="admin-logo">
                 <a href="dashboard.html">
-                  <h1>My Store - Admin</h1>
-              </a>
+                    <h1>My Store - Admin</h1>
+                </a>
             </div>
             <div class="user-info">
                 Hesbon |
@@ -50,300 +50,114 @@
         </div>
         <!-- /Left menu -->
         <div class="action">
-                <p>Create/Edit a Product</p>
-                <form class="create-edit-product">
-                    <div>
-                        <input type="text" name="title" value="" placeholder="Title">
-                    </div>
-                    <div>
-                        <input type="text" name="price" value="" placeholder="Price">
-                    </div>
-                    <div>
-                        <input type="text" name="quantity" value="" placeholder="Quantity">
-                    </div>
-                    <div>
-                        <label>Featured image</label>
-						<input class="form-control" type="file" name="featured_image" >
-								
-                    </div>
-                    <div>
-                        <div>
-                            <textarea name="body" id="body" cols="31" rows="6"></textarea>
-                        </div>
-                        <div>
-                            <select name="topic_id">
-                                <option value="" selected disabled>Choose Category</option>
-                                <option value="">
-                                    Food
-                                </option>
-                                <option value="">
-                                    Furniture
-                                </option>
-                                <option value="">
-                                    Electronics
-                                </option>
-                            </select>
-                        </div>
-                        <div>
-                            <button type="submit" class="button button-primary" name="update_post">UPDATE</button>
-                            <button type="submit" class="button button-primary" name="create_post">Save Product</button>
-                        </div>
-                </form>
-            </div>
-        
-        
-        
+            <form class="create-edit-product" id="create_product" method="post">
+                <p>Create Product</p>
+                <p id="Message" style="text-transform: none; color: red"></p>
+                <div>
+                    <input type="text" id="title" value="" placeholder="Title" required>
+                </div>
+                <div>
+                    <input type="text" id="price" value="" placeholder="Price" required>
+                </div>
+                <div>
+                    <input type="text" id="quantity" value="" placeholder="Quantity" required>
+                </div>
+                <div>
+                    <input type="text" id="lower_inventory" value="" placeholder="Lower Inventory" required>
+                </div>
+
+                <div>
+                    <textarea name="body" id="description" cols="31" rows="6" required placeholder=".....Description...."></textarea>
+                </div>
+                <div>
+                    <select id="category" required>
+                        <option selected disabled>Choose Category</option>
+                        <option >
+                            Fruits
+                        </option>
+                        <option >
+                            Food
+                        </option>
+                        <option >
+                            Furniture
+                        </option>
+                        <option >
+                            Electronics
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit" class="button button-primary" name="create_post">Save Product</button>
+                </div>
+            </form>
+            <form class="create-edit-product" id="edit_product" method="POST">
+                <p>Update Product</p>
+                <p id="Message" style="text-transform: none; color: red"></p>
+                <div>
+                    <input type="text" id="title2" placeholder="Title" required>
+                </div>
+                <div>
+                    <input type="text" id="price2" value="" placeholder="Price" required>
+                </div>
+                <div>
+                    <input type="text" id="quantity2" value="" placeholder="Quantity" required>
+                </div>
+                <div>
+                    <input type="text" id="lower_inventory2" value="" placeholder="Lower Inventory" required>
+                </div>
+
+                <div>
+                    <textarea name="body" id="description2" cols="31" rows="6" required placeholder=".....Description...."></textarea>
+                </div>
+                <div>
+                    <select id="category2" required>
+                        <option selected disabled>Choose Category</option>
+                        <option>
+                            Fruits
+                        </option>
+                        <option >
+                            Food
+                        </option>
+                        <option>
+                            Furniture
+                        </option>
+                        <option>
+                            Electronics
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit" class="button button-primary">Update Product</button>
+                </div>
+            </form>
+
         </div>
-        <!--display records from DB -->
-        <div class="table-div">
-            <table class="table">
-                <thead>
-                    <th>N</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Price (Ksh)</th>
-                    <th>Quantity</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>
-                            Sugar
-                        </td>
-                        <td>Mumias Sugar</td>
-                        <td>140</td>
-                        <td>14</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>
-                            Rice
-                        </td>
-                        <td>Pishori</td>
-                        <td>180</td>
-                        <td>7</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>
-                            Shoe Polish
-                        </td>
-                        <td>Kiwi</td>
-                        <td>40</td>
-                        <td>500</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>
-                            Salt
-                        </td>
-                        <td>Ken Salt</td>
-                        <td>20</td>
-                        <td>123</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>
-                            Ketchup
-                        </td>
-                        <td>Ken Sources</td>
-                        <td>100</td>
-                        <td>23</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>
-                            Yoghurt
-                        </td>
-                        <td>Delamere</td>
-                        <td>200</td>
-                        <td>57</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>
-                            Sugar
-                        </td>
-                        <td>Kabras Sugar</td>
-                        <td>120</td>
-                        <td>20</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>
-                            Butter
-                        </td>
-                        <td>Blue Band</td>
-                        <td>130</td>
-                        <td>4</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>
-                            Biscuit
-                        </td>
-                        <td>Manji Family</td>
-                        <td>90</td>
-                        <td>11</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>
-                            Juice
-                        </td>
-                        <td>Highlands</td>
-                        <td>210</td>
-                        <td>15</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>
-                            Evercise book
-                        </td>
-                        <td>Kasuku</td>
-                        <td>110</td>
-                        <td>500</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>
-                            Battery
-                        </td>
-                        <td>Chloride Exide</td>
-                        <td>1,200</td>
-                        <td>23</td>
-                        <td class="btn">
-                            <a class="fa fa-pencil edit"
-                        href="#">
-                      </a>
-                        </td>
-                        <td class="btn">
-                            <a class="fa fa-trash-o delete"
-                          href="#">
-                      </a>
-                        </td>
-                    </tr>
-    
-                </tbody>
-            </table>
-        </div>
+
+    <!--display records from DB -->
+    <div class="table-div">
+        <table class="table">
+            <thead>
+                <th>N</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Price (Ksh)</th>
+                <th>Quantity</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="all_products">
+                
+            </tbody>
+        </table>
+    </div>
     </div>
     <!-- Footer -->
-	<div class="footer">
-		<p>&copy; Copyright 2018 Hesbon</p>
-	</div>
-	<!-- /Footer -->
+    <div class="footer">
+        <p>&copy; Copyright 2018 Hesbon</p>
+    </div>
+    <!-- /Footer -->
+    <script src="static/js/createEditProduct.js"></script>
 </body>
+
 </html>
