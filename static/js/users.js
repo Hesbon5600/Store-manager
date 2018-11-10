@@ -68,3 +68,24 @@ function getAllUsers(){
 
         })
 }
+function promoteUser(user_id){
+    let token = localStorage.getItem('token')
+    message = 'Are you sure you want promote this user?'
+    con = confirm(message)
+    if (con) {
+        fetch('https://store-manager-v2.herokuapp.com/api/v2/users/' + user_id, {
+            mode: 'cors',
+            method: 'PUT',
+            headers: {
+                'x-access-token': token
+            }
+        })
+        .then((res) => res.json())
+            .then((data) => {
+            alert(data.Status + "! " + data.message)
+            if (data.message == 'User has been promoted to admin'){
+                window.location.reload()
+            }
+            });
+        }
+}
