@@ -149,3 +149,22 @@ function editProduct(e){
             window.location.reload()
         })
 }
+function deleteProduct(product_id){
+    let token = localStorage.getItem('token');
+    message = 'Are you sure you want to delete this product?'
+    con = confirm(message)
+    if (con) {
+        fetch('https://store-manager-v2.herokuapp.com/api/v2/products/' + product_id, {
+        method: 'DELETE',
+        mode: 'cors',
+        headers: {
+            'x-access-token': token
+        }})
+        .then((res) => res.json())
+        .then((data) => {
+            alert(data.message)
+            window.location.reload()
+        });
+                
+    }
+}
