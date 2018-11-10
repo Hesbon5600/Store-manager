@@ -89,3 +89,63 @@ function getAllProducts(){
             });
         });
 }
+function getThisProduct(product_id){
+    let prod_id = product_id;
+    let token = localStorage.getItem('token');
+    fetch('https://store-manager-v2.herokuapp.com/api/v2/products/' + prod_id, {
+        mode: 'cors',
+        headers: {
+            'x-access-token': token
+        }
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            let product = data.Product;
+            let product_id = product.product_id
+            localStorage.setItem('product_id', product_id)
+            document.getElementById('title2').value = product.title
+            document.getElementById('price2').value = product.price
+            document.getElementById('quantity2').value = product.quantity
+            document.getElementById('lower_inventory2').value = product.lower_inventory
+            document.getElementById('category2').value = product.category
+            document.getElementById('description2').value = product.description
+                        
+        })
+        document.getElementById('create_product').style.display = "none";
+        edit_product.style.display = "block";
+}
+
+document.getElementById('edit_product').addEventListener('submit', editProduct);
+function editProduct(e){
+    e.preventDefault();
+    let product_id = localStorage.getItem('product_id')
+    let token = localStorage.getItem('token');
+    let title = document.getElementById('title2').value;
+    let price = document.getElementById('price2').value;
+    let quantity = document.getElementById('quantity2').value;
+    let lower_inventory = document.getElementById('lower_inventory2').value;
+    let description = document.getElementById('description2').value;
+    let category = document.getElementById('category2').value;
+
+    fetch('https://store-manager-v2.herokuapp.com/api/v2/products/' + product_id, {
+        method: 'PUT',
+        mode: 'cors',
+        headers: {
+            'Content-type': 'application/json',
+            'x-access-token': token
+        },
+        body: JSON.stringify({
+                title: title,
+                price: price,
+                quantity: quantity,
+                lower_inventory: lower_inventory,
+                description: description,
+                category: category
+            })
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            alert(data.message)
+            window.location.reload()
+        })
+}
