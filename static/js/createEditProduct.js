@@ -34,7 +34,7 @@ function createProduct(e) {
             .then((data) => {
                 message = data.message
                 if (message = 'Product created Successfully') {
-                    
+                    alert(message)
                     window.location.reload()
                 }
                 else{
