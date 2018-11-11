@@ -1,8 +1,13 @@
+// Call the getAllProducts() function to display
+// the products in the side modal
 window.onload = getAllProducts();
+// If the admin submits the 
+// product details to be updated, call the createProduct() function
 document.getElementById('create_product').addEventListener('submit', createProduct);
 let edit_product = document.getElementById('edit_product')
 let all_products = document.getElementById('all_products');
 let Message = document.getElementById('Message');
+// Create product
 function createProduct(e) {
     e.preventDefault();
     let token = localStorage.getItem('token');
@@ -12,7 +17,6 @@ function createProduct(e) {
     let lower_inventory = document.getElementById('lower_inventory').value;
     let description = document.getElementById('description').value;
     let category = document.getElementById('category').value;
-    // console.log(category)
     
         fetch('https://store-manager-v2.herokuapp.com/api/v2/products', {
             method: 'POST',
@@ -34,7 +38,7 @@ function createProduct(e) {
             .then((data) => {
                 message = data.message
                 if (message = 'Product created Successfully') {
-                    
+                    alert(message)
                     window.location.reload()
                 }
                 else{
@@ -56,7 +60,6 @@ function getAllProducts(){
         }
     })
         .then((res) => res.json())
-        // .then((data) => console.log(data.products))
         .then((data) => {
             products = data.products
             if (data.Message == 'Token is invalid') {
@@ -92,6 +95,9 @@ function getAllProducts(){
             });
         });
 }
+// When a product is selected for editing,
+// This function gets the product details and
+// Places hem in the form
 function getThisProduct(product_id){
     let prod_id = product_id;
     let token = localStorage.getItem('token');
@@ -119,6 +125,7 @@ function getThisProduct(product_id){
 }
 
 document.getElementById('edit_product').addEventListener('submit', editProduct);
+// Edit a product
 function editProduct(e){
     e.preventDefault();
     let product_id = localStorage.getItem('product_id')
@@ -152,6 +159,8 @@ function editProduct(e){
             window.location.reload()
         })
 }
+// When a product to be deleted is selected
+// A user is prompted to confirm the delete
 function deleteProduct(product_id){
     let token = localStorage.getItem('token');
     message = 'Are you sure you want to delete this product?'

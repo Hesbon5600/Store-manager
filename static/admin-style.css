@@ -214,23 +214,30 @@
     margin: 25px;
 }
 .action.sort{
-    width: 40%;
-    border-radius: 5px;
-    height: 2%;
-    padding: 0;
-
+    width: 35%;
+    border-radius: 5px;    
 }
-.action.sort #search{
+
+.action.sort .search{
     width: 100%;
     height: 10%;
     margin: 1% 2% 1% 1%;
-
+    
 }
-
-.action.sort #search div form input{
+.action.sort .search div{
     width: 100%;
-    margin-left: 5%;
+    margin: 3% auto;
+    margin-bottom: 0;
 }
+.action.sort .search div form input{
+    width: 100%;
+    margin: 0;
+    height: 10%;
+    border-radius: 10%;
+    outline: none;
+    background-color: #f8f6f6;
+}
+
 /* Table div (Displaying records from DB) */
 
 .content .table-div {

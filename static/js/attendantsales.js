@@ -1,3 +1,4 @@
+// This funtion gets the sale records for a apescific attendant
 window.onload = getAttendantRecords();
 function getAttendantRecords(){
     let salesrecord = document.getElementById('mysales');

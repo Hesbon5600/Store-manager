@@ -1,4 +1,5 @@
-
+// Get all products to be 
+// displayed in the products page
 window.onload = getProducts();
 function getProducts() {
     let token = localStorage.getItem('token');
