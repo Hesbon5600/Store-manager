@@ -60,6 +60,32 @@ function closeModal() {
     add_modal.style.display = "none";
 }
 
+function makeSale(product_title){
+    console.log(product_title)
+    let prduct_title = product_title
+    let token = localStorage.getItem('token')
+    let salequantity = document.getElementById("salequantity").value
+    console.log(salequantity)
+    fetch('https://store-manager-v2.herokuapp.com/api/v2/sales', {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-type': 'application/json',
+                'x-access-token': token
+            },
+            body: JSON.stringify({
+                product_title: prduct_title,
+                product_quantity: salequantity
+            })
+        })
+        .then(res => res.json())
+            .then((data) => {
+                alert(data.message)
+                closeModal()
+                
+            })
+
+}
 
 function displayCart() {
     cart_modal.style.display = "block";
