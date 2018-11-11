@@ -25,11 +25,6 @@ html {
   }
 }
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.6rem;
@@ -364,10 +359,10 @@ input[type="button"].button-primary:focus {
  * Main Content Styles
  *===========================================*/
 .content{
-    padding: 3% 4%;
+    padding: 3%;
     width: 95%;
-    min-height: 500px;
-    margin: 1% 4%;
+    height: 100%;
+    margin: 0 1%;
     border: 1px solid #BFBCB3;
     padding: 10px 0px 25px 25px;
     background:linear-gradient(to bottom, rgba(82, 113, 126, .3), #e5e9eb);
@@ -389,6 +384,7 @@ input[type="button"].button-primary:focus {
 }
 .main-content.welcome{
   width: 60%;
+  min-height: 450px;
   margin-right: 0;
 }
 .main-content.products{
@@ -485,7 +481,6 @@ input[type="button"].button-primary:focus {
     padding: 0 1% 2% 1%;
     border: 1px solid #888;
     width:20%;
-    height: 45%; 
     position: fixed;
     left: 34%;
     border-radius: 5px;

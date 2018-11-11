@@ -60,30 +60,36 @@ function closeModal() {
     add_modal.style.display = "none";
 }
 // When the user makes a sale, this function is invoked
-function makeSale(product_title){
+function makeSale(product_title) {
     console.log(product_title)
     let prduct_title = product_title
     let token = localStorage.getItem('token')
     let salequantity = document.getElementById("salequantity").value
     console.log(salequantity)
     fetch('https://store-manager-v2.herokuapp.com/api/v2/sales', {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Content-type': 'application/json',
-                'x-access-token': token
-            },
-            body: JSON.stringify({
-                product_title: prduct_title,
-                product_quantity: salequantity
-            })
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-type': 'application/json',
+            'x-access-token': token
+        },
+        body: JSON.stringify({
+            product_title: prduct_title,
+            product_quantity: salequantity
         })
+    })
         .then(res => res.json())
-            .then((data) => {
+        .then((data) => {
+            if (data.message == 'You must enter a product quantity') {
+                alert(data.message)
+            }
+            else {
+
                 alert(data.message)
                 closeModal()
-                
-            })
+            }
+
+        })
 
 }
 
