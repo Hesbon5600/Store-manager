@@ -2,7 +2,7 @@
 *This is the Final Stoore manager application*
 # Testing the application
 To test this application
-Go to https://hesbon5600.github.io/Store-manager/
+Go to https://hesbon5600.github.io/Store-manager/  
 **1. Login as the admin using the following creddentials:**
   1. Username: admin
   1. Password: Admin123@
@@ -18,5 +18,5 @@ Go to https://hesbon5600.github.io/Store-manager/
   1. Login as the attendant
 
 
-#Acknowledgement
+# Acknowledgement  
 I would like to acknowledge Andela for facilitating this project
