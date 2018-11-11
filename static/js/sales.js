@@ -10,7 +10,6 @@ function getAllSales() {
         }
     })
         .then((res) => res.json())
-        // .then((data) => console.log(data.products))
         .then((data) => {
             let sales = data.Sales
             output = ``;
@@ -46,14 +45,10 @@ function getAllSales() {
 
 }
 window.onload = getAttendants();
-let attendant = document.getElementById('attendant')
 function getAttendants(){
-    let token = localStorage.getItem('token')
+    let attendant = document.getElementById('attendant')
     fetch('https://store-manager-v2.herokuapp.com/api/v2/users', {
-        mode: 'cors',
-        headers: {
-            'x-access-token': token
-        }
+        mode: 'cors'
     })
         .then((res) => res.json())
         .then((data) => {
@@ -61,17 +56,14 @@ function getAttendants(){
             let output = `<option selected disabled>..Attendant..</option>
             `
             users.forEach(user => {
-                localStorage.setItem('users', JSON.stringify({
-                    users: users
-                }))
                 if(user.role == 'attendant'){
                     output +=`
                     <option">
                         ${user.username}
                     </option>
                     `
+                    attendant.innerHTML = output;
                 }
             });
-            attendant.innerHTML = output;
         });
 }

@@ -220,33 +220,14 @@
     padding: 0;
 
 }
-.action.sort div{
-    width: 45%;
-    margin: 4% 2% 1% 1%;
-
-}
-.action.sort .title{
-    padding: 0;
-    float: left;
-    height: 100%;
-    width: 35%;
-    
-}
-.action.sort .title h6{
-    margin: 0;
-    text-align: left;
-}
-
-.action.sort form div{
-    width: 45%;
-    display: inline-block;
-}
-.action.sort form select{
+.action.sort #search{
     width: 100%;
-    float: left;
-    background-color: inherit;
+    height: 10%;
+    margin: 1% 2% 1% 1%;
+
 }
-.action.sort form div button{
+
+.action.sort #search div form input{
     width: 100%;
     margin-left: 5%;
 }
@@ -299,6 +280,7 @@ color: #E8E3E3;
     text-align: center;
 }
 @media only screen and (max-width: 772px) {
+    
     .content.dashboard-content{
         min-height: 200px;
     }

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>My Store | Manage Products</title>
+    <script src="static/js/redirect.js"></script>
     <link rel="stylesheet" type="text/css" href="static/fonts/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="static/style.css">
     <link rel="stylesheet" type="text/css" href="static/admin-style.css">
@@ -16,11 +17,7 @@
             <a href="dashboard.html">My Store <i class="fa fa-stack-overflow"></i></a>
         </div>
         <nav class="nav-wrapper">
-            <ul class="main-nav">
-                <li><a href="dashboard.html" title="home">Home <i class="fa fa-home"></i></a></li>
-                <li><a href="products.html" title="products">Products <i class="fa fa-clipboard"></i></a></li>
-                <li class="current"><a href="dashboard.html" title="dashboard">Dashboard <i class="fa fa-dashboard"></i></a></li>
-                <li><a href="#" title="">Cart <i class="fa fa-shopping-cart"></i></a></li>
+            <ul class="main-nav" id="navigation">
             </ul>
         </nav>
     </header> <!-- /header -->
@@ -31,9 +28,8 @@
                     <h1>My Store - Admin</h1>
                 </a>
             </div>
-            <div class="user-info">
-                Hesbon |
-                <a href="index.html" class="logout-btn">logout</a>
+            <div class="user-info" id="user-info">
+                
             </div>
         </div>
         <!-- Left menu -->
@@ -157,7 +153,10 @@
         <p>&copy; Copyright 2018 Hesbon</p>
     </div>
     <!-- /Footer -->
+    <script src="static/js/onlyadmin.js"></script>
+    <script src="static/js/navigation.js"></script>
     <script src="static/js/createEditProduct.js"></script>
+    <script src="static/js/logout.js"></script>
 </body>
 
 </html>

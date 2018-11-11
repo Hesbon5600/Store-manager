@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>My Store | Manage Users</title>
+    <script src="static/js/redirect.js"></script>
     <link rel="stylesheet" type="text/css" href="static/fonts/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="static/style.css">
     <link rel="stylesheet" type="text/css" href="static/admin-style.css">
@@ -17,11 +18,8 @@
             <a href="dashboard.html">My Store <i class="fa fa-stack-overflow"></i></a>
         </div>
         <nav class="nav-wrapper">
-            <ul class="main-nav">
-                <li><a href="dashboard.html" title="home">Home <i class="fa fa-home"></i></a></li>
-                <li><a href="products.html" title="products">Products <i class="fa fa-clipboard"></i></a></li>
-                <li class="current"><a href="dashboard.html" title="dashboard">Dashboard <i class="fa fa-dashboard"></i></a></li>
-                <li><a href="#" title="">Cart <i class="fa fa-shopping-cart"></i></a></li>
+            <ul class="main-nav" id="navigation">
+
             </ul>
         </nav>
     </header> <!-- /header -->
@@ -29,28 +27,20 @@
         <div class="admin-header">
             <div class="admin-logo">
                 <a href="index.html">
-                  <h1>My Store - Admin</h1>
-              </a>
+                    <h1>My Store - Admin</h1>
+                </a>
             </div>
-            <div class="user-info">
-                Hesbon |
-                <a href="index.html" class="logout-btn">logout</a>
+            <div class="user-info" id="user-info">
+
             </div>
         </div>
         <div class="action sort">
-            <div class="title">
-                <h6>Sort by Attendant:</h6>
-            </div>
-            <div>  
-        	<form>
-        		<div>
-        			<select id="attendant">
-                    </select>	
-                </div>
+            <div class="search">
                 <div>
-                    <button id="sortBy" type="submit" class="button button-primary">GO</button>
-                </div>	
-        	</form>
+                    <form action="#" method="POST">
+                        <input type="search" name="search" placeholder="Search for attendant...">
+                    </form>
+                </div>
             </div>
         </div>
         <!--display records from DB -->
@@ -67,26 +57,30 @@
                     <th>Total (Ksh)</th>
                 </thead>
                 <tbody id="salesrecords">
-                    
+
                 </tbody>
-                <thead>  
-                	<th colspan="6"></th>
+                <thead>
+                    <th colspan="6"></th>
                     <th colspan="3">Total Income (Ksh)</th>
-                 </thead>
+                </thead>
                 <tbody class="total">
-                <tr id="total">
-                	
-                </tr>
-            </tbody>
+                    <tr id="total">
+
+                    </tr>
+                </tbody>
             </table>
-        </div>        
+        </div>
     </div>
-		<!-- Footer -->
-	<div class="footer">
-		<p>&copy; Copyright 2018 Hesbon</p>
-	</div>
-    <!-- /Footer -->  
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; Copyright 2018 Hesbon</p>
+    </div>
+    <!-- /Footer -->
+    <script src="static/js/onlyadmin.js"></script>
+    <script src="static/js/navigation.js"></script>
     <script src="static/js/sales.js"></script>
     <script src="static/js/singlesale.js"></script>
+    <script src="static/js/logout.js"></script>
 </body>
+
 </html>

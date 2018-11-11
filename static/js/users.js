@@ -27,7 +27,13 @@ function signup(e) {
         .then(res => res.json())
             .then((data) => {
                 message = data.message
-                Message.innerHTML = message
+                if(message = "User '" + username +"'successfully registered as '"+role){
+                    alert(message)
+                }
+                else{
+
+                    Message.innerHTML = message
+                }
 
             });
         }
@@ -35,12 +41,8 @@ function signup(e) {
 window.onload = getAllUsers();
 function getAllUsers(){
     allusers = document.getElementById('users')
-    let token = localStorage.getItem('token')
     fetch('https://store-manager-v2.herokuapp.com/api/v2/users', {
-        mode: 'cors',
-        headers: {
-            'x-access-token': token
-        }
+        mode: 'cors'
     })
         .then((res) => res.json())
         .then((data) => {
