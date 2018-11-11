@@ -33,10 +33,13 @@ function createProduct(e) {
         .then(res => res.json())
             .then((data) => {
                 message = data.message
-                Message.innerHTML = message
                 if (message = 'Product created Successfully') {
                     
                     window.location.reload()
+                }
+                else{
+
+                    Message.innerHTML = message
                 }
 
             });
