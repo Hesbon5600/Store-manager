@@ -1,3 +1,4 @@
+// This function handles user signup
 document.getElementById('signup').addEventListener('submit', signup);
 let Message = document.getElementById('Message');
 function signup(e) {
@@ -38,6 +39,7 @@ function signup(e) {
             });
         }
 }
+// Display all users in the side modal
 window.onload = getAllUsers();
 function getAllUsers(){
     allusers = document.getElementById('users')
@@ -70,6 +72,7 @@ function getAllUsers(){
 
         })
 }
+// Promote the user
 function promoteUser(user_id){
     let token = localStorage.getItem('token')
     message = 'Are you sure you want promote this user?'

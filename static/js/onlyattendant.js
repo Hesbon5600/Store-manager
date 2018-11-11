@@ -1,3 +1,4 @@
+// Only the attendant can view his/her sales records
 window.onload = onlyAttendant();
 function onlyAttendant(){
     let current_user = JSON.parse(localStorage.getItem('current_user'));

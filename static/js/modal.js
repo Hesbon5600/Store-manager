@@ -59,7 +59,7 @@ function displayModal(product_id) {
 function closeModal() {
     add_modal.style.display = "none";
 }
-
+// When the user makes a sale, this function is invoked
 function makeSale(product_title){
     console.log(product_title)
     let prduct_title = product_title

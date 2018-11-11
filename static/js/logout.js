@@ -1,3 +1,5 @@
+// When a user clicks logout, 
+// The user session is destroyed
 function logout() {
     let token = localStorage.getItem('token')
     fetch('https://store-manager-v2.herokuapp.com/api/v2/auth/logout', {

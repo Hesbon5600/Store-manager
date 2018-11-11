@@ -1,3 +1,4 @@
+// Gets all sales from the database and display them
 window.onload = getAllSales();
 salesrecords = document.getElementById('salesrecords')
 grandTotal = document.getElementById('total')

@@ -1,5 +1,6 @@
 document.getElementById('login').addEventListener('submit', login);
 let Message = document.getElementById('Message');
+// This function Authenticates the user then logs in the user
 function login(e) {
     e.preventDefault();
     let username = document.getElementById('username').value;
@@ -28,7 +29,7 @@ function login(e) {
         })
         .catch((err) => console.log(err))
     }
-    
+// Store the user information locally
     function getUserInfo(username){
         fetch('https://store-manager-v2.herokuapp.com/api/v2/users', {
             mode: 'cors'

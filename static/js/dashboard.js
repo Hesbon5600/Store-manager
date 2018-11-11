@@ -1,3 +1,4 @@
+// Get the statistics of the users, sales and products
 window.onload = stats();
 function stats() {
     let token = localStorage.getItem('token');

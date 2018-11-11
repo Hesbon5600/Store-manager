@@ -1,3 +1,7 @@
+// Create, update, and delete product. 
+// Create, promote user,
+// Dashboard
+// All sales records pages are reserved only for the admin 
 window.onload = onlyAdmin();
 function onlyAdmin(){
     let current_user = JSON.parse(localStorage.getItem('current_user'));
