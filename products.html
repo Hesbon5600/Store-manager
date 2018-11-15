@@ -12,7 +12,7 @@
     </head>
 
     <body>
-        <!--======================header============================ -->
+        <!--=================================header========================================== -->
         <header class="header">
             <div class="logo">
                 <a href="#">My Store  <i class="fa fa-stack-overflow"></i></a>
@@ -33,124 +33,24 @@
             </div>
             <!-- Main Content -->
             <div class="sidebar categories top">
-                <div class="search">
-                    <h3>Search product</h3>
+                <div class="search" >
                     <form method="POST">
-                        <input type="search" name="search" placeholder="Search for...">
-                        <button class="button button-primary" type="submit">GO</button>
+                        <input onkeyup="findProduct()" id="searchInput" type="search" name="search" placeholder="Search for a product...">
                         
                     </form>
                 </div>
-                <div class="product-categories">
-                    <h3>Product Categories</h3>
-                    <ul>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Toiletries</a></li>
-                        <li><a href="#">Hardware</a></li>
-                        <li><a href="#">Clothes</a></li>
-                        <li><a href="#">Bakery</a></li>
-                    </ul>
-                </div>
+                
             </div>
-            <!-- Main Content for the products
-            <button  type="submit">Modal</button> -->
+            <!-- Main Content for the products  -->
            <div class="main-content products" id="products">
             
         </div>
-        <!-- Add to cart Modal -->
+        <!-- Make sale Modal -->
             <div  id="product-modal" >
             </div>
-        <!-- /Add to cart Modal -->
-        
-        <!-- Cart Modal -->
-            <div  id="cart-modal" class="cart" >
-                <div class="cart-product" id="cart-products">
-                    <div id="M-top">
-                     <h6>Cart   <i class="close close-cart fa fa-times"></i></h6>
-                    
-                    </div>
-                    <div class="cart-content">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Remove</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    
-                                    <td>Omo</td>
-                                    <td>120</td>
-                                    <td>2</td>
-                                    <td><a href="" title=""><i class="fa fa-times"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Omo</td>
-                                    <td>120</td>
-                                    <td>2</td>
-                                    <td><a href="" title=""><i class="fa fa-times"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Omo</td>
-                                    <td>120</td>
-                                    <td>2</td>
-                                    <td><a href="" title=""><i class="fa fa-times"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Omo</td>
-                                    <td>120</td>
-                                    <td>2</td>
-                                    <td><a href="" title=""><i class="fa fa-times"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Omo</td>
-                                    <td>120</td>
-                                    <td>2</td>
-                                    <td><a href="" title=""><i class="fa fa-times"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Omo</td>
-                                    <td>120</td>
-                                    <td>2</td>
-                                    <td><a href="" title=""><i class="fa fa-times"></i></a></td>
-                                </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <th colspan="3">Total</th>
-                                    <th>480</th>
-                                </tr>
-                                
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!-- /Main Content -->
+        <!-- /Make sale Modal -->        
+        <!-- /Main Content -->
             <!-- Side bar -->
-            <div class="sidebar categories side">
-                <div class="search">
-                    <h3>Search product</h3>
-                    <form>
-                        <input type="search" name="search" placeholder="Search for...">
-                        <button class="button button-primary" type="submit">GO</button>
-                        
-                    </form>
-                </div>
-                <div class="product-categories">
-                    <h3>Product Categories</h3>
-                    <ul>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Toiletries</a></li>
-                        <li><a href="#">Hardware</a></li>
-                        <li><a href="#">Clothes</a></li>
-                        <li><a href="#">Bakery</a></li>
-                    </ul>
-                </div>
-            </div>
         </div>
 	<!-- Footer -->
 	<div class="footer">

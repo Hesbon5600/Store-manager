@@ -30,6 +30,7 @@ function signup(e) {
                 message = data.message
                 if(message = "User '" + username +"'successfully registered as '"+role){
                     alert(message)
+                    window.location.reload();
                 }
                 else{
 

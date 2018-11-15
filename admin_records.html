@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <!--======================header============================ -->
+    <!--=================================header========================================== -->
     <header class="header">
         <div class="logo">
             <a href="dashboard.html">My Store <i class="fa fa-stack-overflow"></i></a>
@@ -23,7 +23,7 @@
             </ul>
         </nav>
     </header> <!-- /header -->
-    <div class="content" style="min-height: 550px;">
+    <div class="content admin-records">
         <div class="admin-header">
             <div class="admin-logo">
                 <a href="index.html">
@@ -38,14 +38,14 @@
             <div class="search">
                 <div>
                     <form action="#" method="POST">
-                        <input style="height:40px" type="search" name="search" placeholder="Search for attendant...">
+                        <input onkeyup="findSale()" id="searchInput" style="height:40px" type="search" name="search" placeholder="Search for attendant...">
                     </form>
                 </div>
             </div>
         </div>
         <!--display records from DB -->
         <div class="table-div admin">
-            <table class="table">
+            <table class="table" id="allrecords">
                 <thead>
                     <th>N</th>
                     <th>Product Title</th>

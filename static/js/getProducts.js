@@ -29,9 +29,9 @@ function getProducts() {
                         <a  href="#" title=""><img  src="images/img_8.jpg" alt="Product1"></a>
                     </div>
                     
-                    <div>
-                        <a   href="" title=""><p id="description">${product.title}</p></a>
-                    </div>
+                    <form>
+                        <label   href="" title="" id="description">${product.title}</label>
+                    </form>
                     <div class="product-footer">
                     <a href="" title="">Ksh<span class="first" id="price">${product.price}</span></a>
                     <span  class="last"><a  href="#" title="">Buy <i class="fa fa-plus"></i></a></span>
@@ -46,3 +46,21 @@ function getProducts() {
 
 }
 
+function findProduct(){
+    let input, sort, maindiv, singlediv, divdata, i;
+  input = document.getElementById("searchInput");
+  sort = input.value.toUpperCase();
+  maindiv = document.getElementById("products");
+  singlediv = maindiv.getElementsByTagName("div");
+ 
+  for (i = 0; i < singlediv.length; i++) {
+    divdata = singlediv[i].getElementsByTagName("label")[0];
+    if (divdata) {
+      if (divdata.innerHTML.toUpperCase().indexOf(sort) > -1) {
+        singlediv[i].style.display = "";
+      } else {
+        singlediv[i].style.display = "none";
+      }
+    }
+  }
+ }

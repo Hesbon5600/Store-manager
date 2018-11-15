@@ -286,6 +286,9 @@ color: #E8E3E3;
 .table-div.admin .total{
     text-align: center;
 }
+.content.admin-records{
+    min-height: 800px;
+}
 @media only screen and (max-width: 772px) {
     
     .content.dashboard-content{

@@ -1,13 +1,13 @@
 // Gets all sales from the database and display them
 window.onload = getAllSales();
-salesrecords = document.getElementById('salesrecords')
-grandTotal = document.getElementById('total')
+salesrecords = document.getElementById("salesrecords")
+grandTotal = document.getElementById("total")
 function getAllSales() {
-    let token = localStorage.getItem('token')
-    fetch('https://store-manager-v2.herokuapp.com/api/v2/sales', {
-        mode: 'cors',
+    let token = localStorage.getItem("token")
+    fetch("https://store-manager-v2.herokuapp.com/api/v2/sales", {
+        mode: "cors",
         headers: {
-            'x-access-token': token
+            "x-access-token": token
         }
     })
         .then((res) => res.json())
@@ -47,9 +47,9 @@ function getAllSales() {
 }
 window.onload = getAttendants();
 function getAttendants(){
-    let attendant = document.getElementById('attendant')
-    fetch('https://store-manager-v2.herokuapp.com/api/v2/users', {
-        mode: 'cors'
+    let attendant = document.getElementById("attendant")
+    fetch("https://store-manager-v2.herokuapp.com/api/v2/users", {
+        mode: "cors"
     })
         .then((res) => res.json())
         .then((data) => {
@@ -57,7 +57,7 @@ function getAttendants(){
             let output = `<option selected disabled>..Attendant..</option>
             `
             users.forEach(user => {
-                if(user.role == 'attendant'){
+                if(user.role === "attendant"){
                     output +=`
                     <option">
                         ${user.username}
@@ -68,3 +68,21 @@ function getAttendants(){
             });
         });
 }
+function findSale(){
+    let input, sort, table, tr, td, i;
+  input = document.getElementById("searchInput");
+  sort = input.value.toUpperCase();
+  table = document.getElementById("allrecords");
+  tr = table.getElementsByTagName("tr");
+ 
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[6];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(sort) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+ }

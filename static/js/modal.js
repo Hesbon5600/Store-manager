@@ -1,23 +1,23 @@
 // Get the modal
-let add_modal = document.getElementById('product-modal');
-
-let cart_modal = document.getElementById('cart-modal');
+let add_modal = document.getElementById("product-modal");
 
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
 
-let span2 = document.getElementsByClassName("close-cart")[0];
-
+let product_route = "https://store-manager-v2.herokuapp.com/api/v2/products/"
+let sale_route = "https://store-manager-v2.herokuapp.com/api/v2/sales"
+let token = localStorage.getItem("token");
+let header = {
+    "Content-type": "application/json",
+    "x-access-token": token
+}
 // When the user clicks the product, open the modal 
-function displayModal(product_id) {
+const displayModal = (product_id) => {
     let prod_id = product_id;
-    let token = localStorage.getItem('token');
-    fetch('https://store-manager-v2.herokuapp.com/api/v2/products/' + prod_id, {
-        mode: 'cors',
-        headers: {
-            'x-access-token': token
-        }
-    })
+    fetch(product_route + prod_id, {
+            mode: "cors",
+            headers: header
+        })
         .then((res) => res.json())
         .then((data) => {
             let prod = data.Product;
@@ -52,64 +52,46 @@ function displayModal(product_id) {
             `;
             add_modal.innerHTML = output;
         })
+    let current_user = JSON.parse(localStorage.getItem("current_user"));
+    if (current_user.current_user.role === "attendant") {
+        add_modal.style.display = "block";
+    }
+}
 
-    add_modal.style.display = "block";
-}
-// When the user clicks on <span> (x), close the modal
-function closeModal() {
-    add_modal.style.display = "none";
-}
 // When the user makes a sale, this function is invoked
-function makeSale(product_title) {
+const makeSale = (product_title) => {
     console.log(product_title)
     let prduct_title = product_title
-    let token = localStorage.getItem('token')
     let salequantity = document.getElementById("salequantity").value
-    console.log(salequantity)
-    fetch('https://store-manager-v2.herokuapp.com/api/v2/sales', {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-            'Content-type': 'application/json',
-            'x-access-token': token
-        },
-        body: JSON.stringify({
-            product_title: prduct_title,
-            product_quantity: salequantity
-        })
+    let data = JSON.stringify({
+        product_title: prduct_title,
+        product_quantity: salequantity
     })
+    fetch(sale_route, {
+            method: "POST",
+            mode: "cors",
+            headers: header,
+            body: data
+        })
         .then(res => res.json())
         .then((data) => {
-            if (data.message == 'You must enter a product quantity') {
+            if (data.message == "You must enter a product quantity") {
                 alert(data.message)
-            }
-            else {
+            } else {
 
                 alert(data.message)
                 closeModal()
             }
 
         })
-
-}
-
-function displayCart() {
-    cart_modal.style.display = "block";
 }
 // When the user clicks on <span> (x), close the modal
-span.onclick = () => {
-    add_modal.style.display = "none";
-}
+const closeModal = () => add_modal.style.display = "none";
 
-span2.onclick = function () {
-    cart_modal.style.display = "none";
-}
+
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
+window.onclick = (event) => {
     if (event.target == add_modal) {
         add_modal.style.display = "none";
-    }
-    if (event.target == cart_modal) {
-        cart_modal.style.display = "none";
     }
 }

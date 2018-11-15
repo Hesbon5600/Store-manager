@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans|Mali');
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans|Mali");
 /* ------------------------------------------------------------------- 
  * General Styles
  * ------------------------------------------------------------------- */
@@ -26,19 +26,18 @@ html {
 }
 
 body {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 1.6rem;
   line-height: 1.875;
   color: #423e3e;
   margin: 0;
   padding: 0;
-  background:url('/images/beige-paper.png');
-  /* background-size: 100%; */
+  background:url("/images/beige-paper.png");
   background-attachment: fixed;
 }
 
 h1, h2, h3, h4, h5, h6,{
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
   color: #151515;
   font-style: normal;
   text-rendering: optimizeLegibility;
@@ -153,7 +152,7 @@ a:focus {
   color: #3E606F;
 }
 
-/* ===================================================================
+/* ====================================================================================================
  *  Buttons 
  *
  * ------------------------------------------------------------------- */
@@ -249,7 +248,7 @@ input[type="button"].button-primary:focus {
   border-color: #585353;
 }
 
-/* ===================================================================
+/* ====================================================================================================
  *  header styles 
  *
  * ------------------------------------------------------------------- */
@@ -355,9 +354,9 @@ input[type="button"].button-primary:focus {
   }
 }
 
-/*=========================================== 
+/*================================================================ 
  * Main Content Styles
- *===========================================*/
+ *================================================================*/
 .content{
     padding: 3%;
     width: 95%;
@@ -379,7 +378,6 @@ input[type="button"].button-primary:focus {
     min-height: 300px;
     margin-bottom: 20px;
     padding: 1%;
-    border-right: 1px solid #afadad;
     overflow: hidden;
 }
 .main-content.welcome{
@@ -388,14 +386,14 @@ input[type="button"].button-primary:focus {
   margin-right: 0;
 }
 .main-content.products{
-  width: 70%;
-  padding: 0 !important; 
+  width: 90%;
+  padding: 0 2.2% !important; 
 }
 
 .main-content.products .single-product{
-  width: 20%;
+  width: 13.5%;
   height: 34%;
-  margin: 1%;
+  margin: 1.2%;
   padding:0;
   border-radius: 2px;
   border: 1px solid #afadad;
@@ -413,12 +411,15 @@ input[type="button"].button-primary:focus {
 }
 .content .main-content .section-title {
     font-size: 24px;
-    font-family: 'Mali', cursive;
+    font-family: "Mali", cursive;
     text-transform: uppercase;
     text-align: center;
     overflow: hidden;
 }
-.main-content.products .single-product div p{
+.main-content.products .single-product form{
+  padding-left:30%;
+}
+.main-content.products .single-product form #description{
   font-size: 14px;
   height: 30%;
   margin-top: 2%;
@@ -458,33 +459,34 @@ input[type="button"].button-primary:focus {
   color: rgb(125, 247, 155);
 }
 
-/*=========================================== 
+/*================================================================ 
  * Modal Styles
- *===========================================*/
+ *================================================================*/
 
  #product-modal, #cart-modal.cart{
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
 }
 
 .single-product#modal-product, .cart-product#cart-products{
-  background-color: #3E606F;
-    margin: 15% auto; 
-    padding: 0 1% 2% 1%;
-    border: 1px solid #888;
-    width:20%;
-    position: fixed;
-    left: 34%;
-    border-radius: 5px;
-  }
+background-color: #3E606F;
+  margin: 15% auto; 
+  padding: 0 1% 2% 1%;
+  border: 1px solid #888;
+  width:20%;
+  position: fixed;
+  left: 34%;
+  border-radius: 5px;
+}
+
 
   .single-product#modal-product #M-top{
     height:15%;
@@ -579,7 +581,7 @@ input[type="button"].button-primary:focus {
   padding-left: 30%;
 }
 
-.cart-product#cart-products .cart-content{
+.cart-product#cart-products{
   height: 80%;
   border-radius: 5%;
   margin-top: 0;
@@ -610,9 +612,9 @@ input[type="button"].button-primary:focus {
 .cart-product#cart-products table tbody tr td a:hover{
   color: #1a1811;
 }
-/*=========================================== 
+/*================================================================ 
  * Sidebar Styles
- *===========================================*/
+ *================================================================*/
  .sidebar{
     position: absolute;
     width: 30%;
@@ -650,7 +652,7 @@ input[type="button"].button-primary:focus {
 }
 .sidebar.signup-login form{
   width: 70%;
-  margin: 2% 15%;
+  /* margin: 2% 15%; */
 }
 .sidebar.signup-login form div, .create-product-div form div{
     display:block;
@@ -666,7 +668,7 @@ input[type="button"].button-primary:focus {
     float: left;
     border:  none;
     border-bottom:  1px solid #afadad;
-    height: 1%;
+    height: .1%;
     background-color: inherit;
 }
 .sidebar.signup-login form div input:focus{
@@ -683,69 +685,38 @@ input[type="button"].button-primary:focus {
     width: 20%;
 }
 .sidebar.categories.top{
-  width: 90%;
+  width: 30%;
+  height: .2%;
   margin: .5% 1.5%;
   position: relative;
-  display: none;
 }
 .sidebar.categories div{
   display:  block;
 }
 .sidebar.categories .search{
-  border-radius: 5px; 
+  border-radius: 5px;
+  margin-left: 5%;
+  height: .2%; 
   border: 1px solid #afadad;
 }
-.sidebar.categories h3{
-  border-bottom: 1px solid #afadad;
-  width: 80%;
-  margin: 4% 8%
-}
+
 .sidebar.categories .search form{
-  width: 80%;
-  margin: 4% 7%;
+  width: 98%;
+  margin: 1%;
 }
 .sidebar.categories .search input{
-    width: 65%;
+  outline: none;
+    width: 100%;
     float: left;
-    padding: 1.9% 1.6% 1.9% 1.5%;
+    padding: .5%;
     background-color: #f3f0f0;
-    margin: 0;
+    margin-bottom: 1%;
     border:  1px solid #afadad;
     border-radius: 5px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: none;
     
 }
-.sidebar.categories .search button{
-  width: 35%;
-  margin: 0;
-  border: none;
-}
-.sidebar.categories .product-categories{
-    border:  1px solid #afadad;
-    border-radius: 5px;
-    margin: 6% 0;
-    padding:.5% 0;
-  
-}
-.sidebar.categories .product-categories ul{
-  margin-left: 0;
-  width: 70%;
-}
-.sidebar.categories .product-categories ul li{
-  list-style: none;
-  text-align: left;
-  margin: 7% 0;
-  border-bottom: 1px solid #afadad;
-}
-.sidebar.categories .product-categories ul li:hover{
-    padding-left: 7%;
-    background: #F9F9F9;
-    transition: 0.1s;
-    color:#AB8E40;
-    cursor: pointer;
-}
+
+
 
 /* Footer */
 .footer{
@@ -806,8 +777,9 @@ input[type="button"].button-primary:focus {
     width: 95%;
   }
   .main-content.products .single-product{
-    width: 30%;
-    height: 20%;
+    width: 25%;
+    height: 15%;
+    margin-right: 3%;
   }
   .main-content.products .single-product div img{
     height:35%;
@@ -822,9 +794,7 @@ input[type="button"].button-primary:focus {
     width: 30%;
 
   }
-  .sidebar.categories.side{
-    display: none;
-  }
+ 
   .sidebar.categories.top{
     display: block;
     width: 93%;
