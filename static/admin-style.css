@@ -191,6 +191,9 @@
 .action .create-edit-product#edit_product{
     display: none;
 }
+.action form div label{
+    font-weight: bold;
+}
 .action form div select{
     width: 70%;
     float: left;
