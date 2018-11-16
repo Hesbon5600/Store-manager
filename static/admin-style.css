@@ -186,7 +186,7 @@
 }
 
 .action .create-edit-product div input {
-    margin: 2% 5% 2% 15%;
+    margin: 1% 5% 1% 15%;
 }
 .action .create-edit-product#edit_product{
     display: none;
@@ -197,7 +197,7 @@
 .action form div select{
     width: 70%;
     float: left;
-    margin: 2% 5% 2% 15%;
+    margin: 1% 5% 0 15%;
     background-color: inherit;
 }
 .action form div input:focus,
