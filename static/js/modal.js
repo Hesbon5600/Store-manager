@@ -4,75 +4,74 @@ let add_modal = document.getElementById("product-modal");
 // Get the <span> element that closes the modal
 let span = document.getElementsByClassName("close")[0];
 
-let product_route = "https://store-manager-v2.herokuapp.com/api/v2/products/"
-let sale_route = "https://store-manager-v2.herokuapp.com/api/v2/sales"
+let product_route = "http://localhost:5000/api/v2/products/"
+let sale_route = "http://localhost:5000/api/v2/sales"
 let token = localStorage.getItem("token");
 let header = {
     "Content-type": "application/json",
     "x-access-token": token
 }
-// When the user clicks the product, open the modal 
+// When the user clicks the product, open the modal
 const displayModal = (product_id) => {
     let prod_id = product_id;
     fetch(product_route + prod_id, {
-            mode: "cors",
-            headers: header
-        })
+        mode: "cors",
+        headers: header
+    })
         .then((res) => res.json())
         .then((data) => {
-            let prod = data.Product;
+            let prod = data.product;
             let output = `
             <div class="single-product" id="modal-product">
                     <div id="M-top">
                     <span onclick="closeModal()"><i class="close fa fa-times"></i></span>
                     <h6>${prod.description}</h6>
-                    
+
                     </div>
                     <div>
-                    </div>  
+                    </div>
                     <div>
                         <a href="" title="" class="prod"><p>
                             <ul style="list-style: none; color: #ffffff;">
                                 <li>Title: ${prod.title} </li>
                                 <li>Quantity: ${prod.quantity}</li>
-                                <li>Minimum Inventory: ${prod.lower_inventory}</li> 
+                                <li>Minimum Inventory: ${prod.lower_inventory}</li>
                             </ul>
-                        
-                        
+
+
                         </p></a>
                     </div>
                     <form>
-                    <input required id="salequantity" type="text" placeholder="...Quantity to sell..." style="width:61%; margin-left: 21%; border-radius: .5rem; background-color: #f0f5f8;">
+                    <input required id="salequantity" type="number" placeholder="...Quantity to sell..." style="width:61%; margin-left: 21%; border-radius: .5rem; background-color: #f0f5f8;">
                     </form>
                     <div id="footer" class="product-footer">
                         <a id="cost" href="" title="">Ksh <span class="first">${prod.price}</span></a>
-                        <a style="cursor: pointer;" onclick="makeSale('${prod.title}')"><span class="last"><span>Make sale <i class="fa fa-plus"></i></span></a>
+                        <a style="cursor: pointer;" onclick="makeSale('${product_id}')"><span class="last"><span>Make sale <i class="fa fa-plus"></i></span></a>
                     </div>
                 </div>
             `;
             add_modal.innerHTML = output;
+            console.log(data)
         })
-    let current_user = JSON.parse(localStorage.getItem("current_user"));
-    if (current_user.current_user.role === "attendant") {
-        add_modal.style.display = "block";
-    }
+    add_modal.style.display = "block";
+    // let current_user = JSON.parse(localStorage.getItem("current_user"));
+    // if (current_user.role === "attendant") {
+    // }
 }
 
 // When the user makes a sale, this function is invoked
-const makeSale = (product_title) => {
-    console.log(product_title)
-    let prduct_title = product_title
+const makeSale = (product_id) => {
     let salequantity = document.getElementById("salequantity").value
     let data = JSON.stringify({
-        product_title: prduct_title,
-        product_quantity: salequantity
+        product_id: parseInt(product_id),
+        product_quantity: parseInt(salequantity)
     })
     fetch(sale_route, {
-            method: "POST",
-            mode: "cors",
-            headers: header,
-            body: data
-        })
+        method: "POST",
+        mode: "cors",
+        headers: header,
+        body: data
+    })
         .then(res => res.json())
         .then((data) => {
             if (data.message == "You must enter a product quantity") {

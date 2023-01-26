@@ -5,7 +5,7 @@ function login(e) {
     e.preventDefault();
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
-    fetch("https://store-manager-v2.herokuapp.com/api/v2/auth/login", {
+    fetch("http://localhost:5000/api/v2/auth/login", {
         method: "POST",
         mode: "cors",
         headers: {
@@ -18,31 +18,14 @@ function login(e) {
     })
         .then((res) => res.json())
         .then((data) => {
-            if(data.message === "Successfully logged in"){
-                getUserInfo(username);
+            if (data?.token) {
+                const current_user = JSON.parse(atob(data?.token?.split('.')[1]))
+                localStorage.setItem("current_user", JSON.stringify(current_user));
                 localStorage.setItem("token", data.token);
+                window.location.href = "products.html";
             }
-            else{
+            else {
                 Message.innerHTML = data.message;
             }
         })
-    }
-// Store the user information locally
-    function getUserInfo(username){
-        fetch("https://store-manager-v2.herokuapp.com/api/v2/users", {
-            mode: "cors"
-        })
-        .then((res) => res.json())
-        .then((data) => {
-            users = data.users
-            users.forEach(user => {
-                if (user.username === username) {
-                    localStorage.setItem("current_user", JSON.stringify({
-                        current_user: user
-                    }))
-                    window.location.replace("products.html")
-                }
-            });
-        });
-
 }

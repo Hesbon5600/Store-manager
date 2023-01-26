@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans|Mali");
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * General Styles
  * ------------------------------------------------------------------- */
 
@@ -101,8 +101,8 @@ p {
   }
 }
 
-/* ------------------------------------------------------------------- 
- * Lists - (_document-setup.scss)  
+/* -------------------------------------------------------------------
+ * Lists - (_document-setup.scss)
  * ------------------------------------------------------------------- */
 
 ol {
@@ -135,7 +135,7 @@ ol ul {
 
 
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * links
  * ------------------------------------------------------------------- */
 
@@ -153,7 +153,7 @@ a:focus {
 }
 
 /* ====================================================================================================
- *  Buttons 
+ *  Buttons
  *
  * ------------------------------------------------------------------- */
 
@@ -249,7 +249,7 @@ input[type="button"].button-primary:focus {
 }
 
 /* ====================================================================================================
- *  header styles 
+ *  header styles
  *
  * ------------------------------------------------------------------- */
 
@@ -260,12 +260,12 @@ input[type="button"].button-primary:focus {
   transform: translateX(0%);
   z-index: 501;
   margin: 0;
-  
 
-  
+
+
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * logo
  * ------------------------------------------------------------------- */
 
@@ -294,7 +294,7 @@ input[type="button"].button-primary:focus {
   text-decoration: none
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * navigation
  * ------------------------------------------------------------------- */
 
@@ -350,28 +350,28 @@ input[type="button"].button-primary:focus {
     width:80%;
   }
   .nav-wrapper .main-nav li{
-    margin-right: 10%; 
+    margin-right: 10%;
   }
 }
 
-/*================================================================ 
+/*================================================================
  * Main Content Styles
  *================================================================*/
 .content{
     padding: 3%;
     width: 95%;
-    height: 100%;
+    height: 85vh;
     margin: 0 1%;
     border: 1px solid #BFBCB3;
     padding: 10px 0px 25px 25px;
     background:linear-gradient(to bottom, rgba(82, 113, 126, .3), #e5e9eb);
-    
-    
+
+
 }
 .content div{
     display:inline-block;
     overflow: hidden;
-    
+
 }
 .content .main-content{
     width: 80%;
@@ -387,7 +387,7 @@ input[type="button"].button-primary:focus {
 }
 .main-content.products{
   width: 90%;
-  padding: 0 2.2% !important; 
+  padding: 0 2.2% !important;
 }
 
 .main-content.products .single-product{
@@ -436,7 +436,7 @@ input[type="button"].button-primary:focus {
 .main-content.products .single-product .product-footer a{
   color: #F9F9F9;
   padding-left: 6%;
-  margin-right: 0; 
+  margin-right: 0;
 }
 .main-content.products .single-product .product-footer span{
   color: #FFFFFF;
@@ -445,7 +445,7 @@ input[type="button"].button-primary:focus {
   text-decoration: none;
   width: 100%;
   border: none;
-  
+
 }
 .main-content.products .single-product .product-footer .first{
   border-right: 1px solid #3f3d3d;
@@ -459,7 +459,7 @@ input[type="button"].button-primary:focus {
   color: rgb(125, 247, 155);
 }
 
-/*================================================================ 
+/*================================================================
  * Modal Styles
  *================================================================*/
 
@@ -469,16 +469,16 @@ input[type="button"].button-primary:focus {
   z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
+  width: 100%;
+  height: 100%;
+  overflow: auto;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
 }
 
 .single-product#modal-product, .cart-product#cart-products{
 background-color: #3E606F;
-  margin: 15% auto; 
+  margin: 15% auto;
   padding: 0 1% 2% 1%;
   border: 1px solid #888;
   width:20%;
@@ -522,7 +522,7 @@ background-color: #3E606F;
    margin: 0 2%;
    text-align: center;
    color: #d0d7db;
-   
+
   }
   #modal-product #footer a{
     padding: 2%;
@@ -612,7 +612,7 @@ background-color: #3E606F;
 .cart-product#cart-products table tbody tr td a:hover{
   color: #1a1811;
 }
-/*================================================================ 
+/*================================================================
  * Sidebar Styles
  *================================================================*/
  .sidebar{
@@ -658,7 +658,7 @@ background-color: #3E606F;
     display:block;
     margin:25% 0;
     overflow: hidden;
-    
+
 }
 
 
@@ -696,7 +696,7 @@ background-color: #3E606F;
 .sidebar.categories .search{
   border-radius: 5px;
   margin-left: 5%;
-  height: .2%; 
+  height: .2%;
   border: 1px solid #afadad;
 }
 
@@ -713,7 +713,7 @@ background-color: #3E606F;
     margin-bottom: 1%;
     border:  1px solid #afadad;
     border-radius: 5px;
-    
+
 }
 
 
@@ -759,7 +759,7 @@ background-color: #3E606F;
     width: 98%;
     border: none;
     margin: 0;
-    min-height: 600px;  
+    min-height: 600px;
   }
   .content div{
     display:block;
@@ -794,7 +794,7 @@ background-color: #3E606F;
     width: 30%;
 
   }
- 
+
   .sidebar.categories.top{
     display: block;
     width: 93%;
@@ -830,4 +830,3 @@ background-color: #3E606F;
     font-size: 14px;
   }
 }
-

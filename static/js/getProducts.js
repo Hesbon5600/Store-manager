@@ -1,11 +1,11 @@
-// Get all products to be 
+// Get all products to be
 // displayed in the products page
 window.onload = getProducts();
 function getProducts() {
     let token = localStorage.getItem('token');
     let allProducts = document.getElementById('products')
 
-    fetch('https://store-manager-v2.herokuapp.com/api/v2/products', {
+    fetch('http://localhost:5000/api/v2/products', {
         mode: 'cors',
         headers: {
             'x-access-token': token
@@ -13,22 +13,22 @@ function getProducts() {
     })
         .then((res) => res.json())
         .then((data) => {
-            if (data.Message == 'Token is invalid') {
+            if (data.message == 'Token is invalid') {
                 alert('You must login to access this page');
                 window.location.replace('index.html')
             }
-            if (data.Message == 'No available products') {
-                alert('No available products at the moment');
-                window.location.replace('index.html')
+            if (data.message == 'No available products') {
+                // alert('No available products at the moment');
+                // window.location.replace('index.html')
             }
             let result = '';
-            data.products.forEach(product => {
+            data.products?.forEach(product => {
                 result += `
                 <div onclick="displayModal('${product.product_id}')" class="single-product" id="getsingleproduct">
                 <div>
-                        <a  href="#" title=""><img  src="images/img_8.jpg" alt="Product1"></a>
+                        <a  href="#" title=""><img  src=${product.image_url} alt="Product1"></a>
                     </div>
-                    
+
                     <form>
                         <label   href="" title="" id="description">${product.title}</label>
                     </form>
@@ -38,29 +38,29 @@ function getProducts() {
                     </div>
                     </div>
                     `;
-                    allProducts.innerHTML = result;
-                });
+                allProducts.innerHTML = result;
+            });
             localStorage.setItem('products', JSON.stringify(data.products));
         })
         .catch((error) => console.log(error))
 
 }
 
-function findProduct(){
+function findProduct() {
     let input, sort, maindiv, singlediv, divdata, i;
-  input = document.getElementById("searchInput");
-  sort = input.value.toUpperCase();
-  maindiv = document.getElementById("products");
-  singlediv = maindiv.getElementsByTagName("div");
- 
-  for (i = 0; i < singlediv.length; i++) {
-    divdata = singlediv[i].getElementsByTagName("label")[0];
-    if (divdata) {
-      if (divdata.innerHTML.toUpperCase().indexOf(sort) > -1) {
-        singlediv[i].style.display = "";
-      } else {
-        singlediv[i].style.display = "none";
-      }
+    input = document.getElementById("searchInput");
+    sort = input.value.toUpperCase();
+    maindiv = document.getElementById("products");
+    singlediv = maindiv.getElementsByTagName("div");
+
+    for (i = 0; i < singlediv.length; i++) {
+        divdata = singlediv[i].getElementsByTagName("label")[0];
+        if (divdata) {
+            if (divdata.innerHTML.toUpperCase().indexOf(sort) > -1) {
+                singlediv[i].style.display = "";
+            } else {
+                singlediv[i].style.display = "none";
+            }
+        }
     }
-  }
- }
+}

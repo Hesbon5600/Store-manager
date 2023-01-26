@@ -29,7 +29,7 @@
                 </a>
             </div>
             <div class="user-info" id="user-info">
-                
+
             </div>
         </div>
         <!-- Left menu -->
@@ -53,17 +53,18 @@
                     <input type="text" id="title" value="" placeholder="Title" required>
                 </div>
                 <div>
-                    <input type="text" id="price" value="" placeholder="Price" required>
+                    <input type="number" id="price" value="" placeholder="Price" required>
                 </div>
                 <div>
-                    <input type="text" id="quantity" value="" placeholder="Quantity" required>
+                    <input type="number" id="quantity" value="" placeholder="Quantity" required>
                 </div>
                 <div>
-                    <input type="text" id="lower_inventory" value="" placeholder="Lower Inventory" required>
+                    <input type="number" id="lower_inventory" value="" placeholder="Lower Inventory" required>
                 </div>
 
                 <div>
-                    <textarea name="body" id="description" cols="31" rows="6" required placeholder=".....Description...."></textarea>
+                    <textarea name="body" id="description" cols="31" rows="6" required
+                        placeholder=".....Description...."></textarea>
                 </div>
                 <div>
                     <select id="category" required>
@@ -83,6 +84,9 @@
                     </select>
                 </div>
                 <div>
+                    <select id="image_select" required></select>
+                </div>
+                <div>
                     <button type="submit" class="button button-primary" name="create_post">Save Product</button>
                 </div>
             </form>
@@ -95,20 +99,21 @@
                 </div>
                 <div>
                     <label for="">Price</label>
-                    <input type="text" id="price2" value="" placeholder="Price" required>
+                    <input type="number" id="price2" value="" placeholder="Price" required>
                 </div>
                 <div>
                     <label for="">Quantity</label>
-                    <input type="text" id="quantity2" value="" placeholder="Quantity" required>
+                    <input type="number" id="quantity2" value="" placeholder="Quantity" required>
                 </div>
                 <div>
                     <label for="">Lower Inventory</label>
-                    <input type="text" id="lower_inventory2" value="" placeholder="Lower Inventory" required>
+                    <input type="number" id="lower_inventory2" value="" placeholder="Lower Inventory" required>
                 </div>
 
                 <div>
                     <label for="">Description</label>
-                    <textarea name="body" id="description2" cols="31" rows="4" required placeholder=".....Description...."></textarea>
+                    <textarea name="body" id="description2" cols="31" rows="4" required
+                        placeholder=".....Description...."></textarea>
                 </div>
                 <div>
                     <label for="">Category</label>
@@ -117,7 +122,7 @@
                         <option>
                             Fruits
                         </option>
-                        <option >
+                        <option>
                             Food
                         </option>
                         <option>
@@ -135,24 +140,24 @@
 
         </div>
 
-    <!--display records from DB -->
-    <div class="table-div">
-        <table class="table">
-            <thead>
-                <th>N</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Price (Ksh)</th>
-                <th>Quantity</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </thead>
-            <tbody id="all_products">
-                
-            </tbody>
-        </table>
-    </div>
+        <!--display records from DB -->
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <th>N</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Price (Ksh)</th>
+                    <th>Quantity</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody id="all_products">
+
+                </tbody>
+            </table>
+        </div>
     </div>
     <!-- Footer -->
     <div class="footer">

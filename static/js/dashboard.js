@@ -7,27 +7,30 @@ function stats() {
     let prodSummary = document.getElementById("prodSummary");
 
 
-    fetch("https://store-manager-v2.herokuapp.com/api/v2/users", {
-        mode: "cors"
-    })
-        .then((res) => res.json())
-        .then((data) => {
-            allusers = data.users.length
-            userSummary.innerHTML = allusers
-        });
-    fetch("https://store-manager-v2.herokuapp.com/api/v2/sales", {
+    fetch("http://localhost:5000/api/v2/users", {
         mode: "cors",
         headers: {
             "x-access-token": token
         }
     })
         .then((res) => res.json())
-        .then((data) => { 
-            allsales = data.Sales.length
+        .then((data) => {
+            allusers = data.users.length
+            userSummary.innerHTML = allusers
+        });
+    fetch("http://localhost:5000/api/v2/sales", {
+        mode: "cors",
+        headers: {
+            "x-access-token": token
+        }
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            allsales = data.sales.length
             salesSummary.innerHTML = allsales
         });
 
-    fetch("https://store-manager-v2.herokuapp.com/api/v2/products", {
+    fetch("http://localhost:5000/api/v2/products", {
         mode: "cors",
         headers: {
             "x-access-token": token

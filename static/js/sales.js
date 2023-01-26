@@ -4,7 +4,7 @@ salesrecords = document.getElementById("salesrecords")
 grandTotal = document.getElementById("total")
 function getAllSales() {
     let token = localStorage.getItem("token")
-    fetch("https://store-manager-v2.herokuapp.com/api/v2/sales", {
+    fetch("http://localhost:5000/api/v2/sales", {
         mode: "cors",
         headers: {
             "x-access-token": token
@@ -12,12 +12,10 @@ function getAllSales() {
     })
         .then((res) => res.json())
         .then((data) => {
-            let sales = data.Sales
+            let sales = data.sales
             output = ``;
             let grand_total = 0
             sales.forEach(sale => {
-                let total = 0;
-                total = sale.quantity_sold * sale.product_price;
                 output += `
                 <tr>
                         <td>${sale.sale_id}</td>
@@ -27,14 +25,13 @@ function getAllSales() {
                         <td>${sale.product_description}</td>
                         <td>${sale.product_price}</td>
                         <td>${sale.quantity_sold}</td>
-                        <td>${sale.product_quantity}</td>
                         <td>${sale.attendant_name}</td>
-                        <td>${total}</td>
-                        
+                        <td>${sale.total_price}</td>
+
                     </tr>
-                
+
                 `
-                grand_total += total
+                grand_total += sale.total_price
             });
             salesrecords.innerHTML = output;
             gtotal = `
@@ -46,10 +43,14 @@ function getAllSales() {
 
 }
 window.onload = getAttendants();
-function getAttendants(){
+function getAttendants() {
     let attendant = document.getElementById("attendant")
-    fetch("https://store-manager-v2.herokuapp.com/api/v2/users", {
-        mode: "cors"
+    let token = localStorage.getItem("token")
+    fetch("http://localhost:5000/api/v2/users", {
+        mode: "cors",
+        headers: {
+            "x-access-token": token
+        }
     })
         .then((res) => res.json())
         .then((data) => {
@@ -57,8 +58,8 @@ function getAttendants(){
             let output = `<option selected disabled>..Attendant..</option>
             `
             users.forEach(user => {
-                if(user.role === "attendant"){
-                    output +=`
+                if (user.role === "attendant") {
+                    output += `
                     <option">
                         ${user.username}
                     </option>
@@ -68,21 +69,21 @@ function getAttendants(){
             });
         });
 }
-function findSale(){
+function findSale() {
     let input, sort, table, tr, td, i;
-  input = document.getElementById("searchInput");
-  sort = input.value.toUpperCase();
-  table = document.getElementById("allrecords");
-  tr = table.getElementsByTagName("tr");
- 
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[6];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(sort) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
+    input = document.getElementById("searchInput");
+    sort = input.value.toUpperCase();
+    table = document.getElementById("allrecords");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[6];
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(sort) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
     }
-  }
- }
+}

@@ -1,11 +1,11 @@
-// Restricting access to specific pages is done here 
+// Restricting access to specific pages is done here
 window.onload = navigation();
-function navigation(){
+function navigation() {
     let navigation = document.getElementById("navigation");
     let userInfo = document.getElementById("user-info");
     let current_user = JSON.parse(localStorage.getItem("current_user"));
     // Attendant navigation
-    if (current_user.current_user.role === "admin") {
+    if (current_user.role === "admin") {
         nav = `
         <li style="margin:1% 10%"><a href="index.html" title="home">Home <i class="fa fa-home"></i></a></li>
         <li style="margin:1% 10%" class="current"><a href="products.html" title="products">Products <i class="fa fa-clipboard"></i></a></li>
@@ -14,7 +14,7 @@ function navigation(){
         navigation.innerHTML = nav;
     }
     // Attendant navigation
-    if (current_user.current_user.role === "attendant"){
+    if (current_user.role === "attendant") {
         nav = `
         <li><a href="index.html" title="home">Home <i class="fa fa-home"></i></a></li>
         <li class="current"><a href="products.html" title="products">Products <i class="fa fa-clipboard"></i></a></li>
@@ -22,7 +22,7 @@ function navigation(){
         `
         navigation.innerHTML = nav
     }
-    username = current_user.current_user.username
+    username = current_user.username
     info = `
     ${username} |
     <a style="cursor: pointer; "id="logout" onclick="logout()" class="logout-btn">logout</a>

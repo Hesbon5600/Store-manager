@@ -11,8 +11,8 @@ function signup(e) {
     if (password != password2) {
         Message.innerHTML = 'Password not matching'
     }
-    else{
-        fetch('https://store-manager-v2.herokuapp.com/api/v2/auth/signup', {
+    else {
+        fetch('http://localhost:5000/api/v2/auth/signup', {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -25,34 +25,38 @@ function signup(e) {
                 role: role
             })
         })
-        .then(res => res.json())
+            .then(res => res.json())
             .then((data) => {
                 message = data.message
-                if(message = "User '" + username +"'successfully registered as '"+role){
+                if (message = "User '" + username + "'successfully registered as '" + role) {
                     alert(message)
                     window.location.reload();
                 }
-                else{
+                else {
 
                     Message.innerHTML = message
                 }
 
             });
-        }
+    }
 }
 // Display all users in the side modal
 window.onload = getAllUsers();
-function getAllUsers(){
+function getAllUsers() {
+    let token = localStorage.getItem('token')
     allusers = document.getElementById('users')
-    fetch('https://store-manager-v2.herokuapp.com/api/v2/users', {
-        mode: 'cors'
+    fetch('http://localhost:5000/api/v2/users', {
+        mode: 'cors',
+        headers: {
+            'x-access-token': token
+        }
     })
         .then((res) => res.json())
         .then((data) => {
             users = data.users
             output = ``;
             users.forEach(user => {
-                output +=`
+                output += `
                 <tr>
                 <td>${user.user_id}</td>
                 <td>
@@ -74,24 +78,25 @@ function getAllUsers(){
         })
 }
 // Promote the user
-function promoteUser(user_id){
+function promoteUser(user_id) {
     let token = localStorage.getItem('token')
     message = 'Are you sure you want promote this user?'
     con = confirm(message)
     if (con) {
-        fetch('https://store-manager-v2.herokuapp.com/api/v2/users/' + user_id, {
+        fetch('http://localhost:5000/api/v2/users/' + user_id, {
             mode: 'cors',
             method: 'PUT',
             headers: {
                 'x-access-token': token
             }
         })
-        .then((res) => res.json())
+            .then((res) => res.json())
             .then((data) => {
-            alert(data.Status + "! " + data.message)
-            if (data.message == 'User has been promoted to admin'){
-                window.location.reload()
-            }
+                console.log(data)
+                alert(data.Status + "! " + data.message)
+                if (data.message == 'User has been promoted to admin') {
+                    window.location.reload()
+                }
             });
-        }
+    }
 }
